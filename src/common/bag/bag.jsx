@@ -25,6 +25,7 @@ class Bag extends Component {
             <img
               onClick={() => handleProduct(idx)}
               key={idx}
+
               
               src={product.imgURL}
               alt=""
