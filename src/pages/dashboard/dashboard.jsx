@@ -1,8 +1,17 @@
+import React, { Component } from "react";
+import MiniCard from "./components/mini-card/mini-card";
+import BigCard from "./components/big-card/big-card";
 import "./dashboard.scss";
 
-const Dashboard = () => {
-  return <h1>Dashboard</h1>;
-  
-};
+export class Dashboard extends Component {
+  render() {
+    return (
+      <div>
+        <MiniCard />
+        <BigCard />
+      </div>
+    );
+  }
+}
 
 export default Dashboard;
