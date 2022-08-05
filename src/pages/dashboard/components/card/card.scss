@@ -1,12 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
 .mini-container {
   display: flex;
   flex-direction: column;
   width: max-content;
 
-
   .img-container {
     background-color: #e5e5e5;
+    height: 50%;
     border-radius: 2.2rem;
+    img {
+      width: 200px;
+      height: 30vh;
+    }
   }
   .title-container {
     display: flex;
@@ -36,7 +45,16 @@
     }
     svg {
       color: white;
-    //   background-color: #1a1f16;
+      //   background-color: #1a1f16;
+    }
+  }
+}
+
+.big-card {
+  width: 448px;
+  .img-container {
+    img {
+      width: 400px;
     }
   }
 }
