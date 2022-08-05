@@ -121,6 +121,7 @@ export const card = (
 );
 export const lock = (
   <svg
+  
     width="18"
     height="24"
     viewBox="0 0 18 24"
