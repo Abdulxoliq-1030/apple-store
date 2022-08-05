@@ -5,8 +5,9 @@ class App extends Component {
   state = {};
 
   render() {
-    console.log("products = ", products);
-    return <div className='App'>Apple Watch</div>;
+    return <div className="App">Apple Watch
+    <div>{products}</div>
+    </div>;
   }
 }
 
