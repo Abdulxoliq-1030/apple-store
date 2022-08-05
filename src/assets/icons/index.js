@@ -1,4 +1,4 @@
-export const heart = (
+export const Heart = (
   <svg
     width="24"
     height="24"
@@ -10,7 +10,7 @@ export const heart = (
   </svg>
 );
 
-export const cart = (
+export const Cart = (
   <svg
     width="24"
     height="24"
@@ -24,7 +24,7 @@ export const cart = (
   </svg>
 );
 
-export const storeFont = (
+export const StoreFont = (
   <svg
     width="24"
     height="24"
@@ -36,7 +36,7 @@ export const storeFont = (
   </svg>
 );
 
-export const logOut = (
+export const LogOut = (
   <svg
     width="24"
     height="24"
@@ -48,7 +48,7 @@ export const logOut = (
   </svg>
 );
 
-export const close = (
+export const Close = (
   <svg
     width="24"
     height="24"
@@ -60,7 +60,7 @@ export const close = (
   </svg>
 );
 
-export const menu = (
+export const Menu = (
   <svg
     width="24"
     height="24"
@@ -78,7 +78,7 @@ export const menu = (
   </svg>
 );
 
-export const save = (
+export const Save = (
   <svg
     width="24"
     height="24"
@@ -91,7 +91,7 @@ export const save = (
   </svg>
 );
 
-export const list = (
+export const List = (
   <svg
     width="24"
     height="24"
@@ -129,7 +129,7 @@ export const list = (
   </svg>
 );
 
-export const filledStar = (
+export const FilledStar = (
   <svg
     width="20"
     height="22"
@@ -142,7 +142,7 @@ export const filledStar = (
   </svg>
 );
 
-export const emptyStar = (
+export const EmptyStar = (
   <svg
     width="24"
     height="24"
@@ -159,7 +159,7 @@ export const emptyStar = (
   </svg>
 );
 
-export const bagAdd = (
+export const BagAdd = (
   <svg
     width="24"
     height="24"
@@ -174,7 +174,7 @@ export const bagAdd = (
   </svg>
 );
 
-export const halfStar = (
+export const HalfStar = (
   <svg
     width="24"
     height="22"
@@ -191,7 +191,7 @@ export const halfStar = (
   </svg>
 );
 
-export const back = (
+export const Back = (
   <svg
     width="10"
     height="16"
@@ -209,7 +209,7 @@ export const back = (
   </svg>
 );
 
-export const gift = (
+export const Gift = (
   <svg
     width="20"
     height="22"
@@ -221,7 +221,7 @@ export const gift = (
   </svg>
 );
 
-export const calendar = (
+export const Calendar = (
   <svg
     width="22"
     height="22"
@@ -233,7 +233,7 @@ export const calendar = (
   </svg>
 );
 
-export const card = (
+export const Card = (
   <svg
     width="22"
     height="18"
@@ -245,7 +245,7 @@ export const card = (
   </svg>
 );
 
-export const lock = (
+export const Lock = (
   <svg
   
     width="18"
