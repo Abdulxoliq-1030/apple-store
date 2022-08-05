@@ -1,10 +1,6 @@
-import './button.scss';
-import icon from '../../assets/icons/index';
+import "./button.scss";
 
 function Button() {
-    return (
-        <button>{}</button>
-    )
+  return <button>{icon} {btnLabel}</button>;
 }
-
-export default Button
+export default Button;

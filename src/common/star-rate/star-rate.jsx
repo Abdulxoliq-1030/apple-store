@@ -4,7 +4,7 @@ import { Heart } from "../../assets/icons";
 export default function starRate() {
   return (
     <div className="starRate">
-      <Heart
+      <Heart />
     </div>
   );
 }
