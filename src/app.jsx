@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Bag from "./common/bag/bag";
 
 class App extends Component {
   state = {};
@@ -7,7 +6,6 @@ class App extends Component {
   render() {
     return (
       <>
-        <Bag />
       </>
     );
   }

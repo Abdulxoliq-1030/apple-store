@@ -1,0 +1,49 @@
+.bag-item {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: #fff;
+
+  .product-about {
+    font-size: 1.7rem;
+
+    .product-color {
+      color: #60695c;
+    }
+
+    .starRate {
+      padding: 1.3rem 0;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .amount {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .minus,
+        .plus {
+          font-size: 2rem;
+          cursor: pointer;
+        }
+
+        .minus {
+          color: var(--danger);
+        }
+
+        .count {
+          font-size: 1.5rem;
+        }
+
+        .plus {
+          color: var(--success);
+        }
+      }
+    }
+  }
+}
