@@ -1,0 +1,29 @@
+button {
+  background: #1a1f16;
+  border-radius: 14px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  gap: 0.7rem;
+  border: 1px solid #1a1f16;
+  transition: all 0.1s linear;
+  font-size: 20px;
+
+  svg {
+    fill: #fff;
+    transition: all 0.1s linear;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: #1a1f16;
+
+    svg {
+      fill: #1a1f16;
+    }
+  }
+}

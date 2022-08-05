@@ -1,9 +1,10 @@
-import './button.scss';
+import "./button.scss";
 
-function Button() {
-    return (
-        <button>Btn</button>
-    )
+function Button({ btnIcon, btnLabel }) {
+  return (
+    <button>
+      {btnIcon} {btnLabel}
+    </button>
+  );
 }
-
-export default Button
+export default Button;
