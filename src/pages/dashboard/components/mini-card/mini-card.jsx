@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import products from "../../../../products";
 import img from "../../../../assets/images/apple-watch.png";
-import { bagAdd } from "../../../../assets/icons/index";
+import { BagAdd } from "../../../../assets/icons/index";
+import Button from '../../../../common/button/button'
 import "./mini-card.scss";
 
 class MiniCard extends Component {
@@ -17,7 +18,7 @@ class MiniCard extends Component {
         </div>
         <div className="price-container">
           <h2>$ 529.99</h2>
-          {bagAdd}
+          <Button btnIcon={BagAdd} btnLabel={""}/>
         </div>
       </div>
     );

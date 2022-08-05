@@ -1,7 +1,8 @@
 .mini-container {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: max-content;
+
 
   .img-container {
     background-color: #e5e5e5;
