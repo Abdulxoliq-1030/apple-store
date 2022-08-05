@@ -7,7 +7,7 @@ import React, { Component } from "react";
 
 class Bag extends Component {
 
-  
+
 
   handleProduct = (selectedIdx) => {
     if (selectedIdx) {
@@ -25,6 +25,7 @@ class Bag extends Component {
             <img
               onClick={() => handleProduct(idx)}
               key={idx}
+              
               src={product.imgURL}
               alt=""
             />
