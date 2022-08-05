@@ -1,0 +1,40 @@
+.bag {
+  width: 10rem;
+  text-align: center;
+  padding: 0 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+
+    &:hover {
+      box-shadow: 1px 1px 3px 5px #ddd;
+    }
+  }
+
+  button {
+    margin-top: 3rem;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 22px;
+  }
+}

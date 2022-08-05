@@ -1,6 +1,5 @@
 import { Component } from "react";
-import Button from "./common/button/button";
-import { Heart } from "./assets/icons/index";
+import Bag from "./common/bag/bag";
 
 class App extends Component {
   state = {};
@@ -8,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <>
-      
+        <Bag />
       </>
     );
   }
