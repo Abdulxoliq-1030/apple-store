@@ -1,16 +1,24 @@
 import React, { Component } from "react";
+import Search from "../search/search";
 import { BagAdd } from "../../../../assets/icons/index";
 import Button from "../../../../common/button/button";
 import products from "../../../../products";
 import "./card.scss";
+//alibe
 
 class ProductCard extends Component {
   render() {
     return (
-      <>
+      <div className="general">
+        <Search />
         <div className="container">
           {products.map((product, idx) => (
-            <div key={idx} className="mini-container">
+            <div
+              key={idx}
+              className={`mini-container ${
+                product.computer && "big-container"
+              }`}
+            >
               <div className="img-container">
                 <img src={product.imgURL} alt="" />
               </div>
@@ -25,7 +33,7 @@ class ProductCard extends Component {
             </div>
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }
