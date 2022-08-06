@@ -2,10 +2,12 @@ import "./view.scss";
 import apple from "../../assets/images/apple-watch.png";
 import { FilledStar } from "../../assets/icons";
 import { BagAdd } from "../../assets/icons";
+import { Back } from "../../assets/icons";
 import Button from "../../common/button/button";
 const View = () => {
   return (
     <div className="view">
+      <span className="back">{Back} Back</span>
       <div className="item">
         <div className="img-box">
           <div className="img-container">
