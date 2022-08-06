@@ -3,6 +3,7 @@ import { BagAdd } from "../../../../assets/icons/index";
 import Button from "../../../../common/button/button";
 import products from "../../../../products";
 import "./card.scss";
+//alibe
 
 class ProductCard extends Component {
   render() {
