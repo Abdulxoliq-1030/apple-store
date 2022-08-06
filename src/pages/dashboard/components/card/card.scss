@@ -1,7 +1,11 @@
 .container {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
+  overflow-y: scroll;
+  height: 94.5vh;
+  margin-top: 3rem;
+  padding: 0 2rem;
 }
 .mini-container {
   display: flex;
@@ -9,12 +13,16 @@
   width: max-content;
 
   .img-container {
-    background-color: #e5e5e5;
-    height: 50%;
+    background-color: var(--white);
+    height: 100%;
     border-radius: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     img {
-      width: 200px;
-      height: 30vh;
+      height: 300px;
+      width: 300px;
     }
   }
   .title-container {
@@ -45,16 +53,6 @@
     }
     svg {
       color: white;
-      //   background-color: #1a1f16;
-    }
-  }
-}
-
-.big-card {
-  width: 448px;
-  .img-container {
-    img {
-      width: 400px;
     }
   }
 }

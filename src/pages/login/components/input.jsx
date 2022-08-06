@@ -4,7 +4,7 @@ const Input = ({ labelText, placeholderText }) => {
   return (
     <div className="control">
       <label>{labelText}</label>
-      <input type="text" placeholder={placeholderText} />
+      <input required type="text" placeholder={placeholderText} />
     </div>
   );
 };

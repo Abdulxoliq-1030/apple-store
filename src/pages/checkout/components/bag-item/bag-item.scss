@@ -12,8 +12,11 @@
       color: #60695c;
     }
 
-    .starRate {
+    .rate {
       padding: 1.3rem 0;
+      display: flex;
+      gap: 1rem;
+      color: var(--accent);
     }
 
     .price-item {
