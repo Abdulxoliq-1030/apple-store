@@ -10,9 +10,9 @@
 }
 .container {
   display: flex;
-  // justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
+
   overflow-y: scroll;
   height: 100vh;
   width: 86%;
