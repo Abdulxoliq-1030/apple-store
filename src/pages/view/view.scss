@@ -1,3 +1,10 @@
+.genview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
 .view {
   display: flex;
   flex-direction: column;
@@ -17,6 +24,8 @@
     width: max-content;
     
   }
+  height: 100vh;
+  overflow: scroll;
   .item {
     display: flex;
     justify-content: flex-start;

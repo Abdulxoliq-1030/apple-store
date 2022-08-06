@@ -6,11 +6,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 
   .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    overflow: scroll;
   }
 
   img {
