@@ -10,6 +10,7 @@ export class StarRate extends Component {
     let empty = new Array(5 - half - filled.length).fill(1);
 
     return (
+      
       <div className="starRate">
         {filled.map(() => FilledStar)}
         {half && HalfStar}
