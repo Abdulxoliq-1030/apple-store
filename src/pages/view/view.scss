@@ -1,9 +1,18 @@
+.genview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
 .view {
   display: flex;
   flex-direction: column;
   background: #e5e5e5;
   box-sizing: border-box;
   padding: 56px 60px 0px 66px;
+  height: 100vh;
+  overflow: scroll;
   .item {
     display: flex;
     justify-content: flex-start;
@@ -99,9 +108,9 @@
     display: flex;
     justify-content: flex-end;
     padding-bottom: 40px;
-    button{
-        padding: 8px 24px;
-        gap: 10.25px;
+    button {
+      padding: 8px 24px;
+      gap: 10.25px;
     }
   }
   .line {
