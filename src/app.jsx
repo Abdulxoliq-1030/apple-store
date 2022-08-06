@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Button from "./common/button/button";
 import { Heart } from "./assets/icons/index";
+import View from "./pages/view/view";
 
 class App extends Component {
   state = {};
@@ -8,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <>
-      
+      <View/>
       </>
     );
   }
