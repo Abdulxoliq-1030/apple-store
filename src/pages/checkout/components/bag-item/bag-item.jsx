@@ -1,11 +1,12 @@
 import React from "react";
 import StarRate from "../../../../common/star-rate/star-rate";
 import "./bag-item.scss";
+import image from "../../../../assets/images/apple-watch.png";
 
 function BagItem() {
   return (
     <div className="bag-item">
-      <img src="" alt="" />
+      <img src={image} alt="" />
       <div className="product-about">
         <h1>Dell XPS 13</h1>
         <h4 className="product-color">White</h4>

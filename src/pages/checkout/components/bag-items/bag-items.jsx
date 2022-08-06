@@ -7,6 +7,11 @@ export default function BagItems() {
       <h1>Check your Bag Items</h1>
       <div className="items">
         <BagItem />
+        <BagItem />
+        <BagItem />
+        <BagItem />
+        <BagItem />
+        <BagItem />
       </div>
     </div>
   );
