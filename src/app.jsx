@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Login from "./pages/login/login";
 import "./assets/styles/base.scss";
 import products from "./products";
+import Dashboard from "./pages/dashboard/dashboard";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,9 +15,11 @@ class App extends Component {
   handleSubmit = () => {};
 
   render() {
+    // console.log(this.state.products[9].computer);
     return (
       <>
-        <Login onSubmit={this.handleSubmit} />
+        {/* <Login onSubmit={this.handleSubmit} /> */}
+        <Dashboard products={this.state.products} />
       </>
     );
   }

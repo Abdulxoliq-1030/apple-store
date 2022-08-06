@@ -10,7 +10,12 @@ class ProductCard extends Component {
       <>
         <div className="container">
           {products.map((product, idx) => (
-            <div key={idx} className="mini-container">
+            <div
+              key={idx}
+              className={`mini-container ${
+                product.computer && "big-container"
+              }`}
+            >
               <div className="img-container">
                 <img src={product.imgURL} alt="" />
               </div>

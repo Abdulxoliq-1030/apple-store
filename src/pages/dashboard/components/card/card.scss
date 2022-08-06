@@ -1,12 +1,12 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+
+  flex-wrap: wrap;
   gap: 3rem;
+  // background-color: red;
   overflow-y: scroll;
   height: 100vh;
-  // margin-top: 1rem;
-  // padding: 3rem 2rem;
-  // padding-top: 3rem;
+  width: 60%;
 }
 .mini-container {
   display: flex;
@@ -22,7 +22,7 @@
     align-items: center;
     cursor: pointer;
     img {
-      height: 10rem;
+      height: 12rem;
       width: 10rem;
     }
   }
@@ -54,6 +54,14 @@
     }
     svg {
       color: white;
+    }
+  }
+}
+.big-container {
+  .img-container {
+    img {
+      height: 10rem;
+      width: 23rem;
     }
   }
 }
