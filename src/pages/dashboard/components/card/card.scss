@@ -8,13 +8,14 @@
   height: 100vh;
 }
 .container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  display: flex;
 
-  // margin-top: 1rem;
-  // padding: 3rem 2rem;
-  // padding-top: 3rem;
+  flex-wrap: wrap;
+  gap: 3rem;
+  // background-color: red;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 60%;
 }
 .mini-container {
   display: flex;
@@ -30,7 +31,7 @@
     align-items: center;
     cursor: pointer;
     img {
-      height: 10rem;
+      height: 12rem;
       width: 10rem;
     }
   }
@@ -62,6 +63,14 @@
     }
     svg {
       color: white;
+    }
+  }
+}
+.big-container {
+  .img-container {
+    img {
+      height: 10rem;
+      width: 23rem;
     }
   }
 }
