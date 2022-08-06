@@ -9,13 +9,13 @@
 }
 .container {
   display: flex;
-
+  // justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
   // background-color: red;
   overflow-y: scroll;
   height: 100vh;
-  width: 60%;
+  width: 86%;
 }
 .mini-container {
   display: flex;

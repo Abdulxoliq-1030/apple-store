@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <>
         {/* <Login onSubmit={this.handleSubmit} /> */}
-        {/* <Dashboard products={this.state.products} /> */}
+        <Dashboard products={this.state.products} />
       </>
     );
   }

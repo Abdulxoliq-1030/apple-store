@@ -6,12 +6,12 @@ import "./dashboard.scss";
 
 class Dashboard extends Component {
   render() {
-    // console.log(this.props.products);
     return (
       <div className="dashboard">
         <Sidebar />
-        <ProductCard products={this.props.products} />
+        <ProductCard />
         <Bag />
+        
       </div>
     );
   }
