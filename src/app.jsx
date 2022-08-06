@@ -1,5 +1,4 @@
 import { Component } from "react";
-
 import Login from "./pages/login/login";
 import "./assets/styles/base.scss";
 
