@@ -1,5 +1,5 @@
 import React, { Component} from "react";
-import products from "../../../../products";
+// import products from "../../../../products";
 
 import "./search.scss";
 class Search extends Component {

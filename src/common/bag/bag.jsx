@@ -29,7 +29,7 @@ class Bag extends Component {
           ))}
         </div>
         <h4>Bag Total: $ 5,856.21 </h4>
-        <Button btnIcon={HandleBag} btnLabel={"View Bag"} />
+        <Button onPageChange={this.props.onPageChange} btnIcon={HandleBag} btnLabel={"View Bag"} />
       </div>
     );
   }

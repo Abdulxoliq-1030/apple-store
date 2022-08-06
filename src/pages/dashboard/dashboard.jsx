@@ -8,10 +8,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        <Sidebar />
-        <ProductCard />
-        <Bag />
-        
+        <Sidebar onPageChange={this.props.onPageChange} />
+        <ProductCard products={this.props.products} />
+        <Bag onPageChange={this.props.onPageChange} />
       </div>
     );
   }

@@ -8,8 +8,12 @@ class Sidebar extends Component {
     return (
       <div className="sidebar">
         <div>
-          <button>{StoreFont}</button>
-          <button>{HandleBag}</button>
+          <button onClick={() => this.props.onPageChange("dashboard")}>
+            {StoreFont}
+          </button>
+          <button onClick={() => this.props.onPageChange("checkout")}>
+            {HandleBag}
+          </button>
         </div>
         <button className="logOut">{LogOut}</button>
       </div>
@@ -18,3 +22,4 @@ class Sidebar extends Component {
 }
 
 export default Sidebar;
+

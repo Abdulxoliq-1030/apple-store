@@ -4,7 +4,6 @@ import { BagAdd } from "../../../../assets/icons/index";
 import Button from "../../../../common/button/button";
 import products from "../../../../products";
 import "./card.scss";
-//alibe
 
 class ProductCard extends Component {
   state = {
@@ -15,16 +14,18 @@ class ProductCard extends Component {
   handleChange = (e) => {
     this.setState({ productsName: e.target.value });
     this.filterProducts();
-
   };
 
   filterProducts = () => {
     let keys = ["name", "model"];
-    let temp = this.state.renderProducts.filter((product) =>
-      keys.some((key) =>
-        product[key].toLowerCase().includes(this.state.productsName)
-      )
-    );
+    let temp =
+      this.state.renderProducts !== ""
+        ? products.filter((product) =>
+            keys.some((key) =>
+              product[key].toLowerCase().includes(this.state.productsName)
+            )
+          )
+        : products;
     this.setState({ renderProducts: temp });
   };
 
