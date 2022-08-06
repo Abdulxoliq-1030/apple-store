@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Search from "../search/search";
 import { BagAdd } from "../../../../assets/icons/index";
 import Button from "../../../../common/button/button";
 import products from "../../../../products";
@@ -8,7 +9,8 @@ import "./card.scss";
 class ProductCard extends Component {
   render() {
     return (
-      <>
+      <div className="general">
+        <Search />
         <div className="container">
           {products.map((product, idx) => (
             <div
@@ -31,7 +33,7 @@ class ProductCard extends Component {
             </div>
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }
