@@ -1,12 +1,12 @@
-
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
   overflow-y: scroll;
-  height: 94.5vh;
-  margin-top: 3rem;
-  padding: 0 2rem;
+  height: 100vh;
+  // margin-top: 1rem;
+  // padding: 3rem 2rem;
+  // padding-top: 3rem;
 }
 .mini-container {
   display: flex;
@@ -22,8 +22,8 @@
     align-items: center;
     cursor: pointer;
     img {
-      height: 200px;
-      width: 200px;
+      height: 10rem;
+      width: 10rem;
     }
   }
   .title-container {
