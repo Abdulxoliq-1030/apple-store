@@ -12,13 +12,13 @@ class App extends Component {
     this.state = {
       user: {},
       products: products,
-      page: "login",
+      page: "dashboard",
     };
   }
 
   handleSubmit = () => {};
 
-  handlePage = (page) => {
+  handlePageChange = (page) => {
     // let temp = this.state.page;
     // temp = page;
     this.setState({ page: page });
@@ -29,9 +29,11 @@ class App extends Component {
       case "login":
         return <Login onLogin={this.handleLogIn} />;
       case "dashboard":
-        return <Dashboard products={products} />;
+        return (
+          <Dashboard onPageChange={this.handlePageChange} products={products} />
+        );
       case "checkout":
-        return <Checkout />;
+        return <Checkout onPageChange={this.handlePageChange} />;
       case "view":
         return <View />;
       default:

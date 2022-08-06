@@ -4,15 +4,48 @@ import { BagAdd } from "../../../../assets/icons/index";
 import Button from "../../../../common/button/button";
 import products from "../../../../products";
 import "./card.scss";
-//alibe
 
 class ProductCard extends Component {
+  state = {
+    productss: products,
+
+    productName: "",
+  };
+
+  handleChange = async (event) => {
+    await this.setState({ productName: event.target.value });
+    this.filterProducts();
+  };
+  filterProducts = () => {
+    let temp =
+      this.state.productName !== ""
+        ? products.filter(
+            (product) =>
+              product.name
+                .toLowerCase()
+                .includes(this.state.productName.toLowerCase()) ||
+              product.model
+                .toLowerCase()
+                .includes(this.state.productName.toLowerCase())
+          )
+        : products;
+    this.setState({ productss: temp });
+  };
+
   render() {
+    // console.log(this.state.productss);
     return (
       <div className="general">
-        <Search />
+        {/* <Search /> */}
+        <div className="search">
+          <input
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Apple Watch, Samsung S21, Mackbook Pro,..."
+          />
+        </div>
         <div className="container">
-          {products.map((product, idx) => (
+          {this.state.productss.map((product, idx) => (
             <div
               key={idx}
               className={`mini-container ${

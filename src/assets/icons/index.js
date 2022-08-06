@@ -71,9 +71,9 @@ export const Menu = (
     <path
       d="M4.125 7.125H12H19.875M4.125 12H19.875M4.125 16.875H19.875"
       stroke="#1A1F16"
-      stroke-width="2"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
+      strokeWidth="2"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
     />
   </svg>
 );
@@ -102,29 +102,29 @@ export const List = (
     <path
       d="M7.5 17.25H21M7.5 6.75H21H7.5ZM7.5 12H21H7.5Z"
       stroke="#1A1F16"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M3.75 7.5C4.16421 7.5 4.5 7.16421 4.5 6.75C4.5 6.33579 4.16421 6 3.75 6C3.33579 6 3 6.33579 3 6.75C3 7.16421 3.33579 7.5 3.75 7.5Z"
       stroke="#1A1F16"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M3.75 12.75C4.16421 12.75 4.5 12.4142 4.5 12C4.5 11.5858 4.16421 11.25 3.75 11.25C3.33579 11.25 3 11.5858 3 12C3 12.4142 3.33579 12.75 3.75 12.75Z"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M3.75 18C4.16421 18 4.5 17.6642 4.5 17.25C4.5 16.8358 4.16421 16.5 3.75 16.5C3.33579 16.5 3 16.8358 3 17.25C3 17.6642 3.33579 18 3.75 18Z"
       stroke="#1A1F16"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -141,7 +141,6 @@ export const HandleBag = (
   </svg>
 );
 
-
 export const EmptyStar = (
   <svg
     width="24"
@@ -153,8 +152,8 @@ export const EmptyStar = (
   >
     <path
       d="M22.5 9.75H14.4375L12 2.25L9.5625 9.75H1.5L8.0625 14.25L5.53125 21.75L12 17.0625L18.4688 21.75L15.9375 14.25L22.5 9.75Z"
-      stroke-width="2"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -169,8 +168,6 @@ export const FilledStar = (
     <path d="M18.4687 21.5C18.3109 21.5006 18.1568 21.4514 18.0286 21.3594L12 16.9887L5.97139 21.3594C5.84259 21.4528 5.68742 21.5028 5.52831 21.5022C5.36921 21.5016 5.21441 21.4505 5.08629 21.3561C4.95818 21.2618 4.86339 21.1291 4.81563 20.9774C4.76787 20.8256 4.76961 20.6626 4.82061 20.5119L7.17185 13.5476L1.07811 9.36873C0.946112 9.27831 0.846491 9.14806 0.793797 8.99699C0.741103 8.84592 0.7381 8.68196 0.785225 8.52907C0.83235 8.37617 0.927135 8.24235 1.05573 8.14716C1.18432 8.05197 1.33999 8.0004 1.49998 7.99998H9.01779L11.2865 1.01795C11.3354 0.867212 11.4308 0.735826 11.5589 0.642643C11.6871 0.54946 11.8415 0.499268 12 0.499268C12.1584 0.499268 12.3128 0.54946 12.441 0.642643C12.5692 0.735826 12.6645 0.867212 12.7134 1.01795L14.9822 8.00233H22.5C22.6602 8.00225 22.8162 8.05346 22.9452 8.14847C23.0741 8.24347 23.1693 8.37728 23.2167 8.5303C23.2641 8.68331 23.2613 8.84748 23.2087 8.99878C23.156 9.15008 23.0563 9.28054 22.9242 9.37107L16.8281 13.5476L19.1779 20.51C19.216 20.6227 19.2267 20.7429 19.2092 20.8605C19.1916 20.9782 19.1464 21.09 19.0771 21.1868C19.0078 21.2835 18.9165 21.3623 18.8107 21.4168C18.7049 21.4712 18.5877 21.4998 18.4687 21.5Z" />
   </svg>
 );
-
-
 
 export const BagAdd = (
   <svg
@@ -195,8 +192,8 @@ export const HalfStar = (
     <path
       stroke="#12805D"
       d="M22.5 9.75H14.4375L12 2.25L9.5625 9.75H1.5L8.0625 14.25L5.53125 21.75L12 17.0625L18.4688 21.75L15.9375 14.25L22.5 9.75Z"
-      stroke-width="2"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinejoin="round"
     />
     <path
       d="M12 2.25V17.0625L5.53125 21.75L8.0625 14.25L1.5 9.75H9.5625L12 2.25Z"
@@ -216,9 +213,8 @@ export const Back = (
   >
     <path
       d="M8.375 1.25L1.625 8L8.375 14.75"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinejoin="round"
     />
   </svg>
 );

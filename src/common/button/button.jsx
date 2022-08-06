@@ -1,8 +1,12 @@
 import "./button.scss";
 
-function Button({ btnIcon, btnLabel }) {
+function Button({ btnIcon, btnLabel, onPageChange }) {
   return (
-    <button>
+    <button
+      onClick={() => {
+        onPageChange("checkout");
+      }}
+    >
       {btnIcon} {btnLabel}
     </button>
   );

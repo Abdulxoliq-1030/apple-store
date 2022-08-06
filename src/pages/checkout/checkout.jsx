@@ -3,14 +3,14 @@ import Bag from "../../common/bag/bag";
 import "./checkout.scss";
 import Sidebar from "../../common/sidebar/sidebar";
 
-const Checkout = () => {
+const Checkout = ({ onPageChange }) => {
   return (
     <div className="checkout">
-      <Sidebar />
+      <Sidebar onPageChange={onPageChange} />
       <BagItems />
       <Bag />
     </div>
   );
 };
- 
+
 export default Checkout;
