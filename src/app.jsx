@@ -10,9 +10,8 @@ class App extends Component {
   render() {
     return (
       <>
-    
-        <Checkout />
-    
+        {/* <Checkout /> */}
+        <Dashboard />
       </>
     );
   }
