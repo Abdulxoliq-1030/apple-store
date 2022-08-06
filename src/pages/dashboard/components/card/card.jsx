@@ -15,11 +15,15 @@ class ProductCard extends Component {
   handleChange = (e) => {
     this.setState({ productsName: e.target.value });
     this.filterProducts();
+
   };
 
   filterProducts = () => {
+    let keys = ["name", "model"];
     let temp = this.state.renderProducts.filter((product) =>
-      product.name.includes(this.state.productsName)
+      keys.some((key) =>
+        product[key].toLowerCase().includes(this.state.productsName)
+      )
     );
     this.setState({ renderProducts: temp });
   };
