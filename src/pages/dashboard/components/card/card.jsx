@@ -7,12 +7,36 @@ import "./card.scss";
 //alibe
 
 class ProductCard extends Component {
+  state = {
+    renderProducts: products,
+    productsName: "",
+  };
+
+  handleChange = (e) => {
+    this.setState({ productsName: e.target.value });
+    this.filterProducts();
+  };
+
+  filterProducts = () => {
+    let temp = this.state.renderProducts.filter((product) =>
+      product.name.includes(this.state.productsName)
+    );
+    this.setState({ renderProducts: temp });
+  };
+
   render() {
     return (
       <div className="general">
-        <Search />
+        {/* <Search /> */}
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Apple Watch, Samsung S21, Mackbook Pro,..."
+            onChange={this.handleChange}
+          />
+        </div>
         <div className="container">
-          {products.map((product, idx) => (
+          {this.state.renderProducts.map((product, idx) => (
             <div
               key={idx}
               className={`mini-container ${
