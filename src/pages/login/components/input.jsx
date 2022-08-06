@@ -1,10 +1,10 @@
 import "../login.scss";
 
-const Input = ({ labelText, placeholderText }) => {
+const Input = ({ labelText, placeholderText, ref }) => {
   return (
     <div className="control">
       <label>{labelText}</label>
-      <input required type="text" placeholder={placeholderText} />
+      <input ref={ref} required type="text" placeholder={placeholderText} />
     </div>
   );
 };

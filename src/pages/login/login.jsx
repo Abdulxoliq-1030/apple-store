@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import Button from "../../common/button/button";
 import Input from "./components/input";
 import "./login.scss";
@@ -25,19 +26,21 @@ const inputs = [
   },
 ];
 
-const Login = () => {
-  return (
-    <form className="login">
-      {inputs.map((input, idx) => (
-        <Input
-          key={idx}
-          labelText={input.label}
-          placeholderText={input.placeholder}
-        />
-      ))}
-      <Button btnLabel={"Login"} />
-    </form>
-  );
-};
+class Login extends Component {
+  render() {
+    return (
+      <div className="login">
+        {inputs.map((input, idx) => (
+          <Input
+            key={idx}
+            labelText={input.label}
+            placeholderText={input.placeholder}
+          />
+        ))}
+        <Button btnLabel={"Login"} />
+      </div>
+    );
+  }
+}
 
 export default Login;
