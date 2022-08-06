@@ -6,12 +6,10 @@ import "./bag.scss";
 import React, { Component } from "react";
 
 class Bag extends Component {
-
-
-
   handleProduct = (selectedIdx) => {
     if (selectedIdx) {
       alert("Aniq o'chirmoqchimisiz");
+      console.log(selectedIdx);
     }
   };
 
@@ -24,14 +22,13 @@ class Bag extends Component {
           {products.map((product, idx) => (
             <img
               onClick={() => handleProduct(idx)}
-              key={idx}
-
-              
+              key={product.id}
               src={product.imgURL}
               alt=""
             />
           ))}
         </div>
+        <h4>Bag Total: $ 5,856.21 </h4>
         <Button btnIcon={HandleBag} btnLabel={"View Bag"} />
       </div>
     );

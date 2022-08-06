@@ -1,0 +1,38 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  margin: 8rem auto;
+  gap: 1rem;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  background-color: #fff;
+  button {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    label {
+      color: rgba(26, 31, 22, 0.5);
+    }
+    input {
+      border: none;
+      color: rgba(26, 31, 22, 0.5);
+      offset: 0px, 4px rgba(26, 31, 22, 0.15);
+      outline: none;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      width: 94%;
+      border-radius: 13px;
+      box-shadow: 0px 4px 1rem 0px #1a1f1615;
+    }
+  }
+}

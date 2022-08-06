@@ -1,6 +1,7 @@
 import { Component } from "react";
-import Bag from "./common/bag/bag";
-import Sidebar from "./common/sidebar/sidebar";
+
+import Login from "./pages/login/login";
+import "./assets/styles/base.scss";
 
 class App extends Component {
   state = {};
@@ -8,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Sidebar />
+        <Login />
       </>
     );
   }

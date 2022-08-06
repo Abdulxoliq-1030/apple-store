@@ -1,7 +1,14 @@
+import BagItems from "./components/bag-items/bag-items";
+import Bag from "../../common/bag/bag";
 import "./checkout.scss";
 
 const Checkout = () => {
-  return <h1>muhiddin</h1>;
+  return (
+    <div className="checkout">
+      <BagItems />
+      <Bag />
+    </div>
+  );
 };
 
 export default Checkout;
