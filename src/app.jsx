@@ -1,19 +1,34 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import Login from "./pages/login/login";
 import "./assets/styles/base.scss";
-import Dashboard from "./pages/dashboard/dashboard";
-import View from "./pages/view/view";
-import Checkout from "./pages/checkout/checkout";
-
 class App extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+    };
+  }
+
+  handleSubmit = (name, streetName, city, state, country) => {
+    const inputValues = {
+      name: name.current.value,
+      streetName: streetName.current.value,
+      city: city.current.value,
+      state: state.current.value,
+      country: country.current.value,
+    };
+    this.setState({ user: inputValues });
+  };
+
+  // clickHandler = () => {
+  //   alert(this.inpuRef.current.value);
+  // };
 
   render() {
+    console.log(this.state.user);
     return (
       <>
-        <Checkout />
-        {/* <Dashboard /> */}
-        {/* <View /> */}
+        <Login onSubmit={this.handleSubmit} />
       </>
     );
   }

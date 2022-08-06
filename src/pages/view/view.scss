@@ -11,6 +11,19 @@
   background: #e5e5e5;
   box-sizing: border-box;
   padding: 56px 60px 0px 66px;
+  padding-bottom: 57px;
+  .back {
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #1a1f16;
+    margin-bottom: 32px;
+    cursor: pointer;
+    width: max-content;
+    
+  }
   height: 100vh;
   overflow: scroll;
   .item {

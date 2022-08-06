@@ -1,15 +1,17 @@
 import "./view.scss";
 import apple from "../../assets/images/apple-watch.png";
-import { FilledStar } from "../../assets/icons";
 import { BagAdd } from "../../assets/icons";
+import { Back } from "../../assets/icons";
 import Button from "../../common/button/button";
 import Sidebar from "../../common/sidebar/sidebar";
 import Bag from "../../common/bag/bag";
+import StarRate from "../../common/star-rate/star-rate";
 const View = () => {
   return (
     <div className="genview">
       <Sidebar />
       <div className="view">
+        <span className="back">{Back} Back</span>
         <div className="item">
           <div className="img-box">
             <div className="img-container">
@@ -30,11 +32,7 @@ const View = () => {
             <span className="series">Series 5 SE</span>
             <div className="rate">
               <div className="starts">
-                {FilledStar}
-                {FilledStar}
-                {FilledStar}
-                {FilledStar}
-                {FilledStar}
+                <StarRate />
               </div>
               <span>5/5</span>
             </div>
