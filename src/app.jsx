@@ -40,7 +40,29 @@ class App extends Component {
     this.setState({ user: true, page: "dashboard" });
   };
 
-  render() {
+  handleLogOut = () => {
+    localStorage.removeItem(USER_KEY);
+    this.setState({ user: null, page: REDIRECT_PAGE });
+  };
+
+  handlePageChange = (newPage) => {
+    localStorage.setItem(PAGE_KEY, JSON.stringify(newPage));
+    this.setState({ page: newPage });
+  };
+
+  // product ni id si keladi
+  handleProduct = (selectedId) => {
+    console.log(selectedId);
+  };
+
+  getPage = () => {
+    const { products } = this.state;
+    const defaultProps = {
+      onPageChange: this.handlePageChange,
+      onLogOut: this.handleLogOut,
+      onProduct: this.handleProduct,
+    };
+
     switch (this.state.page) {
       case "login":
         return (
@@ -54,11 +76,11 @@ class App extends Component {
           />
         );
       case "dashboard":
-        return <Dashboard products={products} />;
+        return <Dashboard {...defaultProps} products={products} />;
       case "checkout":
-        return <Checkout />;
+        return <Checkout {...defaultProps} />;
       case "view":
-        return <View />;
+        return <View {...defaultProps} />;
       default:
         return (
           <Login
@@ -71,6 +93,11 @@ class App extends Component {
           />
         );
     }
+  };
+
+  render() {
+    return <>{this.getPage()}</>;
   }
 }
+
 export default App;

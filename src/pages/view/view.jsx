@@ -6,10 +6,11 @@ import Button from "../../common/button/button";
 import Sidebar from "../../common/sidebar/sidebar";
 import Bag from "../../common/bag/bag";
 import StarRate from "../../common/star-rate/star-rate";
-const View = () => {
+
+const View = ({ onPageChange, onLogOut }) => {
   return (
     <div className="genview">
-      <Sidebar />
+      <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
       <div className="view">
         <span className="back">{Back} Back</span>
         <div className="item">
