@@ -28,12 +28,14 @@ class App extends Component {
       products: products,
       productName: "",
       bagItems: [],
+      totalPrice: 0,
     };
   }
 
   addBagItem = (product) => {
     let isOk = true;
     let bagItems = this.state.bagItems;
+    let tempPrice = this.state.totalPrice;
     let temp = this.state.products.filter((item) => item === product);
     for (let i = 0; i < bagItems.length; i++) {
       if (bagItems[i] === temp[0]) {
@@ -41,8 +43,10 @@ class App extends Component {
       }
     }
     if (isOk) {
+      tempPrice += +temp[0].price ;
       bagItems.push(temp[0]);
-      this.setState({ bagItems: bagItems });
+
+      this.setState({ bagItems: bagItems, totalPrice: tempPrice });
     }
   };
 
@@ -94,14 +98,16 @@ class App extends Component {
   };
 
   getPage = () => {
-    const { products, user } = this.state;
+    const { products, user, bagItems, totalPrice } = this.state;
+
     const defaultProps = {
       onInputChange: this.handleInputChange,
       addBagItem: this.addBagItem,
       onPageChange: this.handlePageChange,
       onLogOut: this.handleLogOut,
       onProduct: this.handleProduct,
-      bagItems: this.state.bagItems,
+      bagItems: bagItems,
+      totalPrice: totalPrice,
     };
     console.log(this.state.bagItems);
     switch (this.state.page) {

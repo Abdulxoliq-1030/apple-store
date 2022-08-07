@@ -4,7 +4,6 @@ import Sidebar from "../../common/sidebar/sidebar";
 import "./dashboard.scss";
 
 function Dashboard({
-  
   onInputChange,
   addBagItem,
   products,
@@ -12,6 +11,7 @@ function Dashboard({
   onLogOut,
   onProduct,
   bagItems,
+  totalPrice,
 }) {
   return (
     <div className="dashboard">
@@ -22,6 +22,7 @@ function Dashboard({
         products={products}
       />
       <Bag
+        totalPrice={totalPrice}
         onPageChange={onPageChange}
         pageName={"view"}
         onProduct={onProduct}
