@@ -6,46 +6,20 @@ import products from "../../../../products";
 import "./card.scss";
 
 class ProductCard extends Component {
-  state = {
-    productss: products,
-
-    productName: "",
-  };
-
-  handleChange = async (event) => {
-    await this.setState({ productName: event.target.value });
-    this.filterProducts();
-  };
-  filterProducts = () => {
-    let temp =
-      this.state.productName !== ""
-        ? products.filter(
-            (product) =>
-              product.name
-                .toLowerCase()
-                .includes(this.state.productName.toLowerCase()) ||
-              product.model
-                .toLowerCase()
-                .includes(this.state.productName.toLowerCase())
-          )
-        : products;
-    this.setState({ productss: temp });
-  };
-
   render() {
-    // console.log(this.state.productss);
+    console.log(this.props.products);
     return (
       <div className="general">
         {/* <Search /> */}
         <div className="search">
           <input
-            onChange={this.handleChange}
+            onChange={this.props.onInputChange}
             type="text"
             placeholder="Apple Watch, Samsung S21, Mackbook Pro,..."
           />
         </div>
         <div className="container">
-          {this.state.productss.map((product, idx) => (
+          {this.props.products.map((product, idx) => (
             <div
               key={idx}
               className={`mini-container ${
@@ -61,7 +35,11 @@ class ProductCard extends Component {
               </div>
               <div className="price-container">
                 <h2> ${product.price} </h2>
-                <Button btnIcon={BagAdd} btnLabel={""} />
+
+                {/* <Button btnLabel={""} /> */}
+                <button onClick={() => this.props.addBagItem(product)}>
+                  {BagAdd}
+                </button>
               </div>
             </div>
           ))}

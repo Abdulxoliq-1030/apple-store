@@ -26,8 +26,39 @@ class App extends Component {
       user,
       userData: {},
       products: products,
+      productName: "",
+      bagItems: [],
     };
   }
+
+  addBagItem = (product) => {
+    let bagItems = this.state.bagItems;
+    let temp = this.state.products.filter((item) => item === product);
+    bagItems.push(temp[0]);
+
+    this.setState({ bagItems: bagItems });
+  };
+
+  handleInputChange = async (event) => {
+    await this.setState({ productName: event.target.value });
+    this.filterProducts();
+  };
+  filterProducts = () => {
+    let temp =
+      this.state.productName !== ""
+        ? products.filter(
+            (product) =>
+              product.name
+                .toLowerCase()
+                .includes(this.state.productName.toLowerCase()) ||
+              product.model
+                .toLowerCase()
+                .includes(this.state.productName.toLowerCase())
+          )
+        : products;
+    this.setState({ products: temp });
+  };
+
 
   handleLogin = () => {
     const data = {
@@ -55,11 +86,14 @@ class App extends Component {
   getPage = () => {
     const { products, user } = this.state;
     const defaultProps = {
+      onInputChange: this.handleInputChange,
+      addBagItem: this.addBagItem,
       onPageChange: this.handlePageChange,
       onLogOut: this.handleLogOut,
       onProduct: this.handleProduct,
+      bagItems: this.state.bagItems,
     };
-
+    console.log(this.state.bagItems);
     switch (this.state.page) {
       case "login":
         return (

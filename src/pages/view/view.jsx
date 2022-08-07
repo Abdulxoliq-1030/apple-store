@@ -7,7 +7,8 @@ import Sidebar from "../../common/sidebar/sidebar";
 import Bag from "../../common/bag/bag";
 import StarRate from "../../common/star-rate/star-rate";
 
-const View = ({ onPageChange, onLogOut }) => {
+const View = ({ bagItems, onPageChange, onLogOut }) => {
+  console.log(bagItems);
   return (
     <div className="genview">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
@@ -83,7 +84,8 @@ const View = ({ onPageChange, onLogOut }) => {
           </p>
         </div>
       </div>
-      <Bag btnLabel={"View Bag"} />
+
+      <Bag bagItems={bagItems} btnLabel={"View Bag"} />
     </div>
   );
 };
