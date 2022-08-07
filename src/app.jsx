@@ -24,7 +24,7 @@ class App extends Component {
     this.state = {
       page: user ? page : REDIRECT_PAGE,
       user,
-      userData: {},
+      inputLabel: "Login",
       products: products,
       productName: "",
       bagItems: [],
@@ -59,7 +59,6 @@ class App extends Component {
     this.setState({ products: temp });
   };
 
-
   handleLogin = () => {
     const data = {
       userName: this.userName.current.value,
@@ -70,7 +69,11 @@ class App extends Component {
     };
     localStorage.setItem(USER_KEY, JSON.stringify(data));
     localStorage.setItem(PAGE_KEY, JSON.stringify("dashboard"));
-    this.setState({ user: true, page: "dashboard",userData });
+    this.setState({ user: data, page: "dashboard" });
+  };
+
+  handleInputLabel = (label) => {
+    this.setState({ inputLabel: label });
   };
 
   handleLogOut = () => {
@@ -104,12 +107,19 @@ class App extends Component {
             userCity={this.userCity}
             userState={this.userState}
             userCountry={this.userCountry}
+            inputLabel={this.state.inputLabel}
           />
         );
       case "dashboard":
         return <Dashboard {...defaultProps} products={products} />;
       case "check-user":
-        return <CheckUser userData={user} {...defaultProps} />;
+        return (
+          <CheckUser
+            userData={user}
+            {...defaultProps}
+            onInputLabel={this.handleInputLabel}
+          />
+        );
       case "checkout":
         return <Checkout {...defaultProps} />;
       case "view":
@@ -123,6 +133,7 @@ class App extends Component {
             userCity={this.userCity}
             userState={this.userState}
             userCountry={this.userCountry}
+            inputLabel={this.state.inputLabel}
           />
         );
     }

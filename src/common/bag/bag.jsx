@@ -42,12 +42,11 @@ class Bag extends Component {
 
         <h4>Bag Total: {this.state.totalPrice} </h4>
         <Button
-          onPageChange={this.props.onPageChange}
+          pageName={pageName}
+          onPageChange={onPageChange}
           btnIcon={HandleBag}
-          btnLabel={"View Bag"}
+          btnLabel={btnLabel}
         />
-
-        
       </div>
     );
   }

@@ -6,6 +6,7 @@ const Input = ({
   userCity,
   userState,
   userCountry,
+  inputLabel,
 }) => {
   const inputs = [
     {
@@ -49,7 +50,7 @@ const Input = ({
         </>
       ))}
 
-      <button>Login</button>
+      <button>{inputLabel}</button>
     </div>
   );
 };

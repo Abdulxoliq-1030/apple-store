@@ -1,6 +1,6 @@
 import "./shipping-address.scss";
 
-function ShippingAddress({ userData, onPageChange }) {
+function ShippingAddress({ userData, onPageChange, onInputLabel }) {
   return (
     <div className="shipping">
       <h1>Shipping Address</h1>
@@ -12,7 +12,9 @@ function ShippingAddress({ userData, onPageChange }) {
           <li>{userData.userState}</li>
           <li>{userData.userCountry}</li>
         </ul>
-        <button onClick={() => onPageChange("login")}>Change</button>
+        <button onClick={() => (onPageChange("login"), onInputLabel("Save"))}>
+          Change
+        </button>
       </div>
     </div>
   );

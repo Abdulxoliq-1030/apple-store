@@ -4,13 +4,17 @@ import OrderSummary from "../order-summary/order-summary";
 import ShippingAddress from "../shipping-address/shipping-address";
 import "./check-user.scss";
 
-const CheckUser = ({ onPageChange, onLogOut, userData }) => {
+const CheckUser = ({ onPageChange, onLogOut, userData, onInputLabel }) => {
   return (
     <div className="check-user">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
       <div className="bag-items">
         <h1>Checkout</h1>
-        <ShippingAddress onPageChange={onPageChange} userData={userData} />
+        <ShippingAddress
+          onPageChange={onPageChange}
+          userData={userData}
+          onInputLabel={onInputLabel}
+        />
         <BagItem />
       </div>
       <OrderSummary onPageChange={onPageChange} />

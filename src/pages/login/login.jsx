@@ -10,6 +10,7 @@ class Login extends Component {
       userCity,
       userState,
       userCountry,
+      inputLabel,
       onLogin,
     } = this.props;
     return (
@@ -21,6 +22,7 @@ class Login extends Component {
           userState={userState}
           userCountry={userCountry}
           onLogin={onLogin}
+          inputLabel={inputLabel}
         />
       </form>
     );
