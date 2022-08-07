@@ -13,7 +13,7 @@ const CheckUser = ({ onPageChange, onLogOut, userData }) => {
         <ShippingAddress userData={userData} />
         <BagItem />
       </div>
-      <OrderSummary />
+      <OrderSummary onPageChange={onPageChange} />
     </div>
   );
 };

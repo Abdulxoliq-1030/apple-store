@@ -1,7 +1,7 @@
 import { Back } from "../../../../assets/icons/index";
 import "./order-summary.scss";
 
-export default function OrderSummary() {
+export default function OrderSummary({ onPageChange }) {
   return (
     <div className="order-wrap">
       <div className="order-summary">
@@ -23,7 +23,7 @@ export default function OrderSummary() {
         <button>Place your order</button>
       </div>
 
-      <button> {Back} Back</button>
+      <button onClick={() => onPageChange("checkout")}> {Back} Back</button>
     </div>
   );
 }
