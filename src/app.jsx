@@ -3,9 +3,9 @@ import Login from "./pages/login/login";
 import Dashboard from "./pages/dashboard/dashboard";
 import Checkout from "./pages/checkout/checkout";
 import View from "./pages/view/view";
+import CheckUser from "./pages/checkout/components/check-user/check-user";
 import products from "./products";
 import "./assets/styles/base.scss";
-import CheckUser from "./pages/checkout/components/check-user/check-user";
 
 const USER_KEY = "user";
 const PAGE_KEY = "page";
@@ -51,13 +51,8 @@ class App extends Component {
     this.setState({ page: newPage });
   };
 
-  // product ni id si keladi
-  handleProduct = (selectedId) => {
-    console.log(selectedId);
-  };
-
   getPage = () => {
-    const { products } = this.state;
+    const { products, user } = this.state;
     const defaultProps = {
       onPageChange: this.handlePageChange,
       onLogOut: this.handleLogOut,
@@ -79,7 +74,7 @@ class App extends Component {
       case "dashboard":
         return <Dashboard {...defaultProps} products={products} />;
       case "check-user":
-        return <CheckUser />;
+        return <CheckUser userData={user} {...defaultProps} />;
       case "checkout":
         return <Checkout {...defaultProps} />;
       case "view":

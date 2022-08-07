@@ -1,13 +1,18 @@
 import Sidebar from "../../../../common/sidebar/sidebar";
-import BagItems from "../bag-items/bag-items";
+import BagItem from "../bag-item/bag-item";
 import OrderSummary from "../order-summary/order-summary";
+import ShippingAddress from "../shipping-address/shipping-address";
 import "./check-user.scss";
 
-const CheckUser = ({ onPageChange, onLogOut }) => {
+const CheckUser = ({ onPageChange, onLogOut, userData }) => {
   return (
     <div className="check-user">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
-      <BagItems title={"Checkout"} />
+      <div className="bag-items">
+        <h1>Checkout</h1>
+        <ShippingAddress userData={userData} />
+        <BagItem />
+      </div>
       <OrderSummary />
     </div>
   );

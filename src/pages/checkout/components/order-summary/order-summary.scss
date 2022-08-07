@@ -12,6 +12,7 @@
     width: 15rem;
     margin-top: 5rem;
     margin-right: 5rem;
+    font-weight: bold;
     .prices {
       display: flex;
       gap: 1rem;
@@ -55,6 +56,10 @@
     &:hover {
       background-color: #000;
       color: var(--white);
+
+      svg {
+        stroke: var(--white);
+      }
     }
   }
 }
