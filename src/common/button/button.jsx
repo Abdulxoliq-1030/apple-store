@@ -2,11 +2,7 @@ import "./button.scss";
 
 function Button({ btnIcon, btnLabel, onPageChange }) {
   return (
-    <button
-      onClick={() => {
-        onPageChange("checkout");
-      }}
-    >
+    <button onClick={() => onPageChange("checkout")}>
       {btnIcon} {btnLabel}
     </button>
   );

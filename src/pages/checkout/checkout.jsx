@@ -3,12 +3,17 @@ import Bag from "../../common/bag/bag";
 import "./checkout.scss";
 import Sidebar from "../../common/sidebar/sidebar";
 
-const Checkout = ({ onPageChange }) => {
+const Checkout = ({ onPageChange, onLogOut, onProduct }) => {
   return (
     <div className="checkout">
-      <Sidebar onPageChange={onPageChange} />
+      <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
       <BagItems />
-      <Bag />
+      <Bag
+        onPageChange={onPageChange}
+        pageName={"view"}
+        onProduct={onProduct}
+        btnLabel={"View Bag"}
+      />
     </div>
   );
 };

@@ -1,8 +1,7 @@
 import Button from "../button/button";
 import { HandleBag } from "../../assets/icons";
-import products from "../../products";
+// import products from "../../products";
 import "./bag.scss";
-
 import React, { Component } from "react";
 
 class Bag extends Component {
@@ -10,7 +9,7 @@ class Bag extends Component {
     totalPrice: 0,
   };
   componentDidMount = () => {
-    this.setState({ totalPrice: this.props.bagItems.length });
+    // this.setState({ totalPrice: this.props.bagItems.length });
   };
 
   handleProduct = (selectedIdx) => {
@@ -19,29 +18,36 @@ class Bag extends Component {
       // console.log(selectedIdx);
     }
   };
-
   render() {
-    // const { handleProduct } = this;
-    console.log(this.state.totalPrice);
+    const { bagItems, onPageChange, pageName, onProduct, btnLabel } =
+      this.props;
+
     return (
       <div className="bag">
         <h1>Bag</h1>
         <div className="products">
-          {this.props.bagItems.map((product, idx) => (
-            <img
-              // onClick={() => handleProduct(idx)}
-              key={product.id}
-              src={product.imgURL}
-              alt=""
-            />
-          ))}
+          {bagItems
+            ? bagItems.map((product) => (
+                <img
+                  // onClick={() => handleProduct(idx)}
+
+                  onClick={() => onProduct(product.id)}
+                  key={product.id}
+                  src={product.imgURL}
+                  alt=""
+                />
+              ))
+            : null}
         </div>
+
         <h4>Bag Total: {this.state.totalPrice} </h4>
         <Button
           onPageChange={this.props.onPageChange}
           btnIcon={HandleBag}
           btnLabel={"View Bag"}
         />
+
+        
       </div>
     );
   }

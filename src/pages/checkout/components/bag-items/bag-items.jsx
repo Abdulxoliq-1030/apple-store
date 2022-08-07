@@ -8,10 +8,6 @@ export default function BagItems() {
       <div className="items">
         <BagItem />
         <BagItem />
-        <BagItem />
-        <BagItem />
-        <BagItem />
-        <BagItem />
       </div>
     </div>
   );

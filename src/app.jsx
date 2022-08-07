@@ -1,18 +1,29 @@
 import React, { Component } from "react";
 import Login from "./pages/login/login";
-import "./assets/styles/base.scss";
 import Dashboard from "./pages/dashboard/dashboard";
-
-import products from "./products";
 import Checkout from "./pages/checkout/checkout";
 import View from "./pages/view/view";
+import products from "./products";
+import "./assets/styles/base.scss";
+
+const USER_KEY = "user";
+const PAGE_KEY = "page";
+const REDIRECT_PAGE = "login";
 class App extends Component {
+  userName = React.createRef();
+  userStreetName = React.createRef();
+  userCity = React.createRef();
+  userState = React.createRef();
+  userCountry = React.createRef();
+
   constructor(props) {
     super(props);
+    const user = JSON.parse(localStorage.getItem(USER_KEY)); // get user
+    const page = JSON.parse(localStorage.getItem(PAGE_KEY)); // get page
     this.state = {
-      user: {},
+      page: user ? page : REDIRECT_PAGE,
+      user,
       products: products,
-      page: "dashboard",
       productName: "",
       bagItems: [],
     };
@@ -46,33 +57,81 @@ class App extends Component {
     this.setState({ products: temp });
   };
 
-  handleSubmit = () => {};
 
-  handlePageChange = (page) => {
-    this.setState({ page: page });
+  handleLogin = () => {
+    const data = {
+      userName: this.userName.current.value,
+      userStreetName: this.userStreetName.current.value,
+      userCity: this.userCity.current.value,
+      userState: this.userState.current.value,
+      userCountry: this.userCountry.current.value,
+    };
+    localStorage.setItem(USER_KEY, JSON.stringify(data));
+    localStorage.setItem(PAGE_KEY, JSON.stringify("dashboard"));
+    this.setState({ user: true, page: "dashboard" });
+  };
+
+  handleLogOut = () => {
+    localStorage.removeItem(USER_KEY);
+    this.setState({ user: null, page: REDIRECT_PAGE });
+  };
+
+  handlePageChange = (newPage) => {
+    localStorage.setItem(PAGE_KEY, JSON.stringify(newPage));
+    this.setState({ page: newPage });
+  };
+
+  // product ni id si keladi
+  handleProduct = (selectedId) => {
+    console.log(selectedId);
+  };
+
+  getPage = () => {
+    const { products } = this.state;
+    const defaultProps = {
+      onInputChange: this.handleInputChange,
+      addBagItem: this.addBagItem,
+      onPageChange: this.handlePageChange,
+      onLogOut: this.handleLogOut,
+      onProduct: this.handleProduct,
+      bagItems: this.state.bagItems,
+    };
+    console.log(this.state.bagItems);
+    switch (this.state.page) {
+      case "login":
+        return (
+          <Login
+            onLogin={this.handleLogin}
+            userName={this.userName}
+            userStreetName={this.userStreetName}
+            userCity={this.userCity}
+            userState={this.userState}
+            userCountry={this.userCountry}
+          />
+        );
+      case "dashboard":
+        return <Dashboard {...defaultProps} products={products} />;
+      case "checkout":
+        return <Checkout {...defaultProps} />;
+      case "view":
+        return <View {...defaultProps} />;
+      default:
+        return (
+          <Login
+            onLogin={this.handleLogin}
+            userName={this.userName}
+            userStreetName={this.userStreetName}
+            userCity={this.userCity}
+            userState={this.userState}
+            userCountry={this.userCountry}
+          />
+        );
+    }
   };
 
   render() {
-    switch (this.state.page) {
-      case "login":
-        return <Login onLogin={this.handleLogIn} />;
-      case "dashboard":
-        return (
-          <Dashboard
-            addBagItem={this.addBagItem}
-            onInputChange={this.handleInputChange}
-            onPageChange={this.handlePageChange}
-            products={this.state.products}
-            bagItems={this.state.bagItems}
-          />
-        );
-      case "checkout":
-        return <Checkout onPageChange={this.handlePageChange} />;
-      case "view":
-        return <View />;
-      default:
-        return <Login onLogin={this.handleLogIn} />;
-    }
+    return <>{this.getPage()}</>;
   }
 }
+
 export default App;

@@ -6,10 +6,12 @@ import Button from "../../common/button/button";
 import Sidebar from "../../common/sidebar/sidebar";
 import Bag from "../../common/bag/bag";
 import StarRate from "../../common/star-rate/star-rate";
-const View = () => {
+
+const View = ({ bagItems, onPageChange, onLogOut }) => {
+  console.log(bagItems);
   return (
     <div className="genview">
-      <Sidebar />
+      <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
       <div className="view">
         <span className="back">{Back} Back</span>
         <div className="item">
@@ -82,7 +84,7 @@ const View = () => {
           </p>
         </div>
       </div>
-      <Bag />
+      <Bag bagItems={bagItems} btnLabel={"Checkout"} />
     </div>
   );
 };

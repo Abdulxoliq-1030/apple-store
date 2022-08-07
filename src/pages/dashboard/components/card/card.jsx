@@ -26,10 +26,7 @@ class ProductCard extends Component {
                 product.computer && "big-container"
               }`}
             >
-              <div
-                onClick={() => this.props.addBagItem(product)}
-                className="img-container"
-              >
+              <div className="img-container">
                 <img src={product.imgURL} alt="" />
               </div>
               <div className="title-container">
@@ -38,7 +35,11 @@ class ProductCard extends Component {
               </div>
               <div className="price-container">
                 <h2> ${product.price} </h2>
-                <Button btnIcon={BagAdd} btnLabel={""} />
+
+                {/* <Button btnLabel={""} /> */}
+                <button onClick={() => this.props.addBagItem(product)}>
+                  {BagAdd}
+                </button>
               </div>
             </div>
           ))}
