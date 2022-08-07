@@ -7,12 +7,12 @@ const Checkout = ({ onPageChange, onLogOut, onProduct }) => {
   return (
     <div className="checkout">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
-      <BagItems />
+      <BagItems title={"Check your Bag Items"} />
       <Bag
         onPageChange={onPageChange}
-        pageName={"view"}
+        pageName={"check-user"}
         onProduct={onProduct}
-        btnLabel={"View Bag"}
+        btnLabel={"Checkout"}
       />
     </div>
   );
