@@ -13,16 +13,16 @@ class Login extends Component {
       onLogin,
     } = this.props;
     return (
-      <div className="login">
+      <form onSubmit={() => onLogin()} className="login">
         <Input
           userName={userName}
           userStreetName={userStreetName}
           userCity={userCity}
           userState={userState}
           userCountry={userCountry}
+          onLogin={onLogin}
         />
-        <button onClick={onLogin}>Login</button>
-      </div>
+      </form>
     );
   }
 }

@@ -1,18 +1,56 @@
 import "../login.scss";
 
-const Input = ( { userName, userStreetName, userCity, userState, userCountry } ) => {
+const Input = ({
+  onLogin,
+  userName,
+  userStreetName,
+  userCity,
+  userState,
+  userCountry,
+}) => {
+  const inputs = [
+    {
+      label: "Shipping Name",
+      ref: userName,
+      placeholder: "John Maker",
+    },
+    {
+      label: "Street Name",
+      ref: userStreetName,
+      placeholder: "123 Plae Grond Stret",
+    },
+    {
+      label: "City",
+      ref: userCity,
+      placeholder: "Vermont",
+    },
+    {
+      label: "State / Province",
+      ref: userState,
+      placeholder: "California",
+    },
+    {
+      label: "Country",
+      ref: userCountry,
+      placeholder: "United States of America",
+    },
+  ];
+
   return (
     <div className="control">
-      <label>Shipping Name</label>
-      <input ref={userName} required type="text" placeholder="John Maker" />
-      <label>Street Name</label>
-      <input ref={userStreetName} required type="text" placeholder="123 Plae Grond Stret" />
-      <label>City</label>
-      <input ref={userCity} required type="text" placeholder="Vermont" />
-      <label>State / Province</label>
-      <input ref={userState} required type="text" placeholder="California" />
-      <label>Country</label>
-      <input ref={userCountry} required type="text" placeholder="United States of America" />
+      {inputs.map((input, idx) => (
+        <>
+          <label>{input.label}</label>
+          <input
+            ref={input.ref}
+            required
+            type="text"
+            placeholder={input.placeholder}
+          />
+        </>
+      ))}
+
+      <button>Login</button>
     </div>
   );
 };
