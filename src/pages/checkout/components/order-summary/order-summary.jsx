@@ -14,6 +14,7 @@ export default function OrderSummary() {
         <div className="order-price">
           <span>Shipping:</span>
           <span>$ 6.99 </span>
+          
         </div>
       </div>
       <div className="order-total">
