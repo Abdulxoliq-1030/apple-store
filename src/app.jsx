@@ -5,6 +5,7 @@ import Checkout from "./pages/checkout/checkout";
 import View from "./pages/view/view";
 import products from "./products";
 import "./assets/styles/base.scss";
+import CheckUser from "./pages/checkout/components/check-user/check-user";
 
 const USER_KEY = "user";
 const PAGE_KEY = "page";
@@ -77,6 +78,8 @@ class App extends Component {
         );
       case "dashboard":
         return <Dashboard {...defaultProps} products={products} />;
+      case "check-user":
+        return <CheckUser />;
       case "checkout":
         return <Checkout {...defaultProps} />;
       case "view":
