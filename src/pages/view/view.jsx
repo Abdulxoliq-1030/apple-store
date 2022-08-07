@@ -83,7 +83,7 @@ const View = ({ onPageChange, onLogOut }) => {
           </p>
         </div>
       </div>
-      <Bag />
+      <Bag btnLabel={"Checkout"} />
     </div>
   );
 };

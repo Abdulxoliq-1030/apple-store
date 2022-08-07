@@ -12,6 +12,7 @@ function Dashboard({ products, onPageChange, onLogOut, onProduct }) {
         onPageChange={onPageChange}
         pageName={"view"}
         onProduct={onProduct}
+        btnLabel={"View Bag"}
       />
     </div>
   );

@@ -6,7 +6,7 @@ import React, { Component } from "react";
 
 class Bag extends Component {
   render() {
-    const { onPageChange, pageName, onProduct } = this.props;
+    const { onPageChange, pageName, onProduct, btnLabel } = this.props;
     return (
       <div className="bag">
         <h1>Bag</h1>
@@ -21,7 +21,7 @@ class Bag extends Component {
           ))}
         </div>
         <h4>Bag Total: $ 5,856.21 </h4>
-        <button onClick={() => onPageChange(pageName)}>View Bag</button>
+        <button onClick={() => onPageChange(pageName)}> {HandleBag} {btnLabel}</button>
       </div>
     );
   }
