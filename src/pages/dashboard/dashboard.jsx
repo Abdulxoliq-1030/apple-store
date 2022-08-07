@@ -10,8 +10,15 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <Sidebar onPageChange={this.props.onPageChange} />
-        <ProductCard products={this.props.products} />
-        <Bag onPageChange={this.props.onPageChange} />
+        <ProductCard
+          addBagItem={this.props.addBagItem}
+          onInputChange={this.props.onInputChange}
+          products={this.props.products}
+        />
+        <Bag
+          bagItems={this.props.bagItems}
+          onPageChange={this.props.onPageChange}
+        />
       </div>
     );
   }

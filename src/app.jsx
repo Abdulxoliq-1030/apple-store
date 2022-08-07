@@ -13,14 +13,42 @@ class App extends Component {
       user: {},
       products: products,
       page: "dashboard",
+      productName: "",
+      bagItems: [],
     };
   }
+
+  addBagItem = (product) => {
+    let bagItems = this.state.bagItems;
+    let temp = this.state.products.filter((item) => item === product);
+    bagItems.push(temp[0]);
+
+    this.setState({ bagItems: bagItems });
+  };
+
+  handleInputChange = async (event) => {
+    await this.setState({ productName: event.target.value });
+    this.filterProducts();
+  };
+  filterProducts = () => {
+    let temp =
+      this.state.productName !== ""
+        ? products.filter(
+            (product) =>
+              product.name
+                .toLowerCase()
+                .includes(this.state.productName.toLowerCase()) ||
+              product.model
+                .toLowerCase()
+                .includes(this.state.productName.toLowerCase())
+          )
+        : products;
+    this.setState({ products: temp });
+  };
 
   handleSubmit = () => {};
 
   handlePageChange = (page) => {
-    // let temp = this.state.page;
-    // temp = page;
     this.setState({ page: page });
   };
 
@@ -30,7 +58,13 @@ class App extends Component {
         return <Login onLogin={this.handleLogIn} />;
       case "dashboard":
         return (
-          <Dashboard onPageChange={this.handlePageChange} products={products} />
+          <Dashboard
+            addBagItem={this.addBagItem}
+            onInputChange={this.handleInputChange}
+            onPageChange={this.handlePageChange}
+            products={this.state.products}
+            bagItems={this.state.bagItems}
+          />
         );
       case "checkout":
         return <Checkout onPageChange={this.handlePageChange} />;
