@@ -32,11 +32,18 @@ class App extends Component {
   }
 
   addBagItem = (product) => {
+    let isOk = true;
     let bagItems = this.state.bagItems;
     let temp = this.state.products.filter((item) => item === product);
-    bagItems.push(temp[0]);
-
-    this.setState({ bagItems: bagItems });
+    for (let i = 0; i < bagItems.length; i++) {
+      if (bagItems[i] === temp[0]) {
+        return (isOk = false);
+      }
+    }
+    if (isOk) {
+      bagItems.push(temp[0]);
+      this.setState({ bagItems: bagItems });
+    }
   };
 
   handleInputChange = async (event) => {
