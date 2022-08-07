@@ -1,7 +1,6 @@
 import "../login.scss";
 
 const Input = ({
-  onLogin,
   userName,
   userStreetName,
   userCity,

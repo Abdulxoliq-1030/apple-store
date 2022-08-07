@@ -24,6 +24,7 @@ class App extends Component {
     this.state = {
       page: user ? page : REDIRECT_PAGE,
       user,
+      userData: {},
       products: products,
     };
   }
@@ -38,7 +39,7 @@ class App extends Component {
     };
     localStorage.setItem(USER_KEY, JSON.stringify(data));
     localStorage.setItem(PAGE_KEY, JSON.stringify("dashboard"));
-    this.setState({ user: true, page: "dashboard" });
+    this.setState({ user: true, page: "dashboard",userData });
   };
 
   handleLogOut = () => {

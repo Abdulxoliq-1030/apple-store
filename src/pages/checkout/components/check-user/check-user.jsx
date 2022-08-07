@@ -10,7 +10,7 @@ const CheckUser = ({ onPageChange, onLogOut, userData }) => {
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
       <div className="bag-items">
         <h1>Checkout</h1>
-        <ShippingAddress userData={userData} />
+        <ShippingAddress onPageChange={onPageChange} userData={userData} />
         <BagItem />
       </div>
       <OrderSummary onPageChange={onPageChange} />
