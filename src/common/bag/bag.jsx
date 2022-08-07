@@ -44,7 +44,7 @@ class Bag extends Component {
         <Button
           onPageChange={this.props.onPageChange}
           btnIcon={HandleBag}
-          btnLabel={"View Bag"}
+          btnLabel={"View Bag"} 
         />
 
         
