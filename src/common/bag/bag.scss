@@ -6,22 +6,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  h1 {
-    font-size: 40px;
-  }
+  height: 100vh;
 
   .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    overflow: scroll;
   }
 
   img {
     width: 80px;
     height: 80px;
     padding: 0.5rem;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.1s linear;

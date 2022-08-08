@@ -1,0 +1,24 @@
+.bag-items {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100vh;
+  overflow: scroll;
+
+  h1 {
+    font-size: 2.1rem;
+    padding: 1rem 0;
+  }
+
+  .items {
+    overflow-y: scroll;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

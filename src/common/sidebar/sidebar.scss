@@ -1,0 +1,47 @@
+@import "../../assets/styles/main.scss";
+
+.sidebar {
+  width: max-content;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 93vh;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 1rem;
+
+  button {
+    background-color: transparent;
+    width: 3rem;
+    border: none !important;
+    outline: none !important;
+    &:hover {
+      background-color: #0001;
+    }
+    &:active {
+      background-color: #000;
+      svg {
+        fill: #fff;
+      }
+    }
+    svg {
+      fill: #000;
+    }
+  }
+  .logOut {
+    background-color: red;
+    border: none !important;
+    outline: none !important;
+    &:hover {
+      background-color: #000;
+      svg {
+        fill: #fff;
+      }
+    }
+    svg {
+      fill: #fff;
+    }
+  }
+}
