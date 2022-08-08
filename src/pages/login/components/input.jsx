@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import "../login.scss";
 
 const Input = ({
@@ -39,7 +40,7 @@ const Input = ({
   return (
     <div className="control">
       {inputs.map((input, idx) => (
-        <>
+        <Fragment key={idx}>
           <label>{input.label}</label>
           <input
             ref={input.ref}
@@ -47,7 +48,7 @@ const Input = ({
             type="text"
             placeholder={input.placeholder}
           />
-        </>
+        </Fragment>
       ))}
 
       <button>{inputLabel}</button>

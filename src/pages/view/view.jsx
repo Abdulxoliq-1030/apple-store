@@ -1,10 +1,10 @@
-import "./view.scss";
 import apple from "../../assets/images/apple-watch.png";
 import { BagAdd } from "../../assets/icons";
 import { Back } from "../../assets/icons";
 import Sidebar from "../../common/sidebar/sidebar";
 import Bag from "../../common/bag/bag";
 import StarRate from "../../common/star-rate/star-rate";
+import "./view.scss";
 
 const View = ({
   addBagItem,
@@ -25,18 +25,26 @@ const View = ({
         <div className="item">
           <div className="img-box">
             <div className="img-container">
+              
               <div className="image">
                 <img src={viewProduct.imgURL} alt={apple} />
               </div>
+              
               <div className="image">
                 <img src={viewProduct.imgURL} alt={apple} />
               </div>
+              
               <div className="image">
                 <img src={viewProduct.imgURL} alt={apple} />
               </div>
+
             </div>
+
             <img src={viewProduct.imgURL} alt={apple} />
           </div>
+
+
+          
           <div className="info">
             <h2 className="name">{viewProduct.name}</h2>
             <span className="series">{viewProduct.model}</span>

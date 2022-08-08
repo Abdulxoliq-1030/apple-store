@@ -19,7 +19,7 @@ export default function OrderSummary({ onPageChange, totalPrice }) {
         </div>
         <div className="order-total">
           <span>Order Total:</span>
-          <span>$ {totalPrice+usluga}.00</span>
+          <span>$ {totalPrice + usluga}.00</span>
         </div>
         <button>Place your order</button>
       </div>

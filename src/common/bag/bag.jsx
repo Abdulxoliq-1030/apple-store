@@ -14,7 +14,6 @@ class Bag extends Component {
       totalPrice,
       removeBagItem,
     } = this.props;
-console.log(totalPrice);
     return (
       <div className="bag">
         <h1>Bag</h1>
@@ -30,7 +29,6 @@ console.log(totalPrice);
               ))
             : null}
         </div>
-
         <h4>Bag Total: $ {totalPrice}.00 </h4>
         <Button
           pageName={pageName}

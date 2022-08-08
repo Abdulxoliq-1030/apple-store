@@ -2,7 +2,6 @@ import BagItem from "../bag-item/bag-item";
 import "./bag-items.scss";
 
 export default function BagItems({ title, bagItems }) {
-  console.log(bagItems);
   return (
     <div className="bag-items">
       <h1>{title}</h1>

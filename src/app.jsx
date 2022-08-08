@@ -23,14 +23,12 @@ class App extends Component {
     const page = JSON.parse(localStorage.getItem(PAGE_KEY)); // get page
     this.state = {
       page: user ? page : REDIRECT_PAGE,
-
       user,
       inputLabel: "Login",
       products: products,
       productName: "",
       bagItems: [],
       totalPrice: 0,
-      //yanfi state qushildi
       viewProduct: products[0],
     };
   }
@@ -61,9 +59,8 @@ class App extends Component {
     }
   };
 
-  handleInputChange = async (event) => {
-    await this.setState({ productName: event.target.value });
-    this.filterProducts();
+  handleInputChange = (event) => {
+    this.setState({ productName: event.target.value }, this.filterProducts());
   };
   filterProducts = () => {
     let temp =
@@ -130,7 +127,7 @@ class App extends Component {
       viewProduct: viewProduct,
       removeBagItem: this.removeBagItem,
     };
-    console.log(this.state.bagItems);
+
     switch (this.state.page) {
       case "login":
         return (
