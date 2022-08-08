@@ -1,20 +1,13 @@
 import Button from "../button/button";
 import { HandleBag } from "../../assets/icons";
-// import products from "../../products";
 import "./bag.scss";
 import React, { Component } from "react";
 
 class Bag extends Component {
   render() {
-    const {
-      bagItems,
-      onPageChange,
-      pageName,
-      btnLabel,
-      totalPrice,
-      removeBagItem,
+    const {bagItems,onPageChange,pageName,btnLabel,totalPrice,removeBagItem,
     } = this.props;
-console.log(totalPrice);
+    console.log(totalPrice);
     return (
       <div className="bag">
         <h1>Bag</h1>

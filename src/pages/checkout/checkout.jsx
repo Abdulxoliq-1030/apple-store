@@ -1,7 +1,7 @@
 import BagItems from "./components/bag-items/bag-items";
 import Bag from "../../common/bag/bag";
-import "./checkout.scss";
 import Sidebar from "../../common/sidebar/sidebar";
+import "./checkout.scss";
 
 const Checkout = ({
   bagItems,
@@ -14,7 +14,7 @@ const Checkout = ({
   return (
     <div className="checkout">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
-      <BagItems bagItems={bagItems} title={"Check your Bag Items"} />
+      <BagItems totalPrice={totalPrice}  bagItems={bagItems} title={"Check your Bag Items"} />
       <Bag
         removeBagItem={removeBagItem}
         totalPrice={totalPrice}

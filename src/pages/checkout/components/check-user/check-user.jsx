@@ -4,13 +4,7 @@ import OrderSummary from "../order-summary/order-summary";
 import ShippingAddress from "../shipping-address/shipping-address";
 import "./check-user.scss";
 
-const CheckUser = ({
-  bagItems,
-  onPageChange,
-  onLogOut,
-  userData,
-  onInputLabel,
-  totalPrice,
+const CheckUser = ({bagItems,onPageChange,onLogOut,userData,onInputLabel,totalPrice,
 }) => {
   return (
     <div className="check-user">
@@ -22,11 +16,7 @@ const CheckUser = ({
           userData={userData}
           onInputLabel={onInputLabel}
         />
-        {bagItems!==[]?
-          bagItems.map((bagItem) => (
-          <BagItem bagItem={bagItem} />
-        )):<h1>Bag is Empty</h1>
-        }
+        { bagItems.length !== 0 ? bagItems.map((bagItem) => ( <BagItem bagItem={bagItem} /> )):<h1>Bag is Empty</h1> }
       </div>
       <OrderSummary totalPrice={totalPrice} onPageChange={onPageChange} />
     </div>

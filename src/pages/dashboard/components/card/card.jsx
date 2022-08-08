@@ -9,7 +9,6 @@ class ProductCard extends Component {
   render() {
     return (
       <div className="general">
-        {/* <Search /> */}
         <div className="search">
           <input
             onChange={this.props.onInputChange}

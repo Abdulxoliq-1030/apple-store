@@ -3,18 +3,7 @@ import Bag from "../../common/bag/bag";
 import Sidebar from "../../common/sidebar/sidebar";
 import "./dashboard.scss";
 
-function Dashboard({
-  onInputChange,
-  addBagItem,
-  products,
-  onPageChange,
-  onLogOut,
-  onProduct,
-  bagItems,
-  totalPrice,
-  addViewProduct,
-  removeBagItem,
-}) {
+function Dashboard({onInputChange,addBagItem,products,onPageChange,onLogOut,onProduct,bagItems,totalPrice,addViewProduct,removeBagItem}) {
   return (
     <div className="dashboard">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />

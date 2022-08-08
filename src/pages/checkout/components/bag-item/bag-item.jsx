@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import StarRate from "../../../../common/star-rate/star-rate";
+import Rate from "../../../../common/rate/rate";
 import "./bag-item.scss";
 
 export class bagItem extends Component {
@@ -10,14 +10,16 @@ export class bagItem extends Component {
   counter = (oper) => {
     let temp = this.state.mount;
     let temp1 = +this.state.itemTotalPrice;
-    
+
     if (oper === "+") {
       temp1 = +temp1 + +this.props.bagItem.price;
       temp += 1;
     } else {
       temp1 = +temp1 - +this.props.bagItem.price;
       temp -= 1;
-      if(temp===0){return null}
+      if (temp === 0) {
+        return null;
+      }
     }
 
     this.setState({ mount: temp, itemTotalPrice: temp1 });
@@ -35,7 +37,7 @@ export class bagItem extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam{" "}
           </p>
           <div className="rate">
-            <StarRate rate={bagItem.rate} />
+            <Rate rate={bagItem.rate} />
             <span>{bagItem.rate}</span>
           </div>
           <div className="price-item">

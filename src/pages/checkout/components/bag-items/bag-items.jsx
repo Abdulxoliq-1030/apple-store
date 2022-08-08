@@ -1,8 +1,7 @@
 import BagItem from "../bag-item/bag-item";
 import "./bag-items.scss";
 
-export default function BagItems({ title, bagItems }) {
-  console.log(bagItems);
+export default function BagItems({ title, bagItems,totalPrice }) {
   return (
     <div className="bag-items">
       <h1>{title}</h1>
@@ -10,7 +9,7 @@ export default function BagItems({ title, bagItems }) {
         
         {bagItems!==[]?
           bagItems.map((bagItem) => (
-          <BagItem bagItem={bagItem} />
+          <BagItem totalPrice={totalPrice} bagItem={bagItem} />
         )):<h1>Bag is Empty</h1>
         }
         
