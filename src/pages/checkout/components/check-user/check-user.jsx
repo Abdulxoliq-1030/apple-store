@@ -16,7 +16,11 @@ const CheckUser = ({bagItems,onPageChange,onLogOut,userData,onInputLabel,totalPr
           userData={userData}
           onInputLabel={onInputLabel}
         />
-        { bagItems.length !== 0 ? bagItems.map((bagItem) => ( <BagItem bagItem={bagItem} /> )):<h1>Bag is Empty</h1> }
+        {bagItems !== [] ? (
+          bagItems.map((bagItem) => <BagItem bagItem={bagItem} />)
+        ) : (
+          <h1>Bag is Empty</h1>
+        )}
       </div>
       <OrderSummary totalPrice={totalPrice} onPageChange={onPageChange} />
     </div>

@@ -15,7 +15,7 @@ class Bag extends Component {
           {bagItems
             ? bagItems.map((product) => (
                 <img
-                  onClick={() => removeBagItem(product)}
+                  onClick={()=>removeBagItem(product)}
                   key={product.id}
                   src={product.imgURL}
                   alt=""

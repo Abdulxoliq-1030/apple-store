@@ -39,18 +39,15 @@ class App extends Component {
 
   addBagItem = (product) => {
     const { bagItems, totalPrice, products } = this.state;
-    let isOk = true;
+    let isOk = bagItems.some((item) => item === product);
     let tempPrice = totalPrice;
-    let temp = products.filter((item) => item === product);
-    for (let i = 0; i < bagItems.length; i++) {
-      if (bagItems[i] === temp[0]) {
-        return (isOk = false);
-      }
-    }
-    if (isOk) {
-      tempPrice += +product.price;
-      bagItems.push(temp[0]);
-      this.setState({ bagItems: bagItems, totalPrice: tempPrice });
+    let temp = products.filter((item) => item === product)[0];
+    if (!isOk) {
+      bagItems.push(temp);
+      this.setState({
+        bagItems: bagItems,
+        totalPrice: (tempPrice += +product.price),
+      });
     }
   };
 
@@ -59,18 +56,12 @@ class App extends Component {
     this.filterProducts();
   };
   filterProducts = () => {
-    let temp =
-      this.state.productName !== ""
-        ? products.filter(
-            (product) =>
-              product.name
-                .toLowerCase()
-                .includes(this.state.productName.toLowerCase()) ||
-              product.model
-                .toLowerCase()
-                .includes(this.state.productName.toLowerCase())
-          )
-        : products;
+    const { productName } = this.state;
+    let temp = products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(productName.toLowerCase()) ||
+        product.model.toLowerCase().includes(productName.toLowerCase())
+    );
     this.setState({ products: temp });
   };
 
