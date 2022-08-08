@@ -23,15 +23,27 @@ class App extends Component {
     const page = JSON.parse(localStorage.getItem(PAGE_KEY)); // get page
     this.state = {
       page: user ? page : REDIRECT_PAGE,
+
       user,
       inputLabel: "Login",
       products: products,
       productName: "",
       bagItems: [],
       totalPrice: 0,
+      //yanfi state qushildi
+      viewProduct: products[0],
     };
   }
+  addViewProduct = (product) => {
+    this.setState({ viewProduct: product });
+  };
 
+  removeBagItem = (product) => {
+    let tempPrice = this.state.totalPrice;
+    tempPrice = +tempPrice - +product.price;
+    let bagItems = this.state.bagItems.filter((item) => item !== product);
+    this.setState({ bagItems: bagItems, totalPrice: tempPrice });
+  };
   addBagItem = (product) => {
     let isOk = true;
     let bagItems = this.state.bagItems;
@@ -43,7 +55,7 @@ class App extends Component {
       }
     }
     if (isOk) {
-      tempPrice += +temp[0].price ;
+      tempPrice += +product.price;
       bagItems.push(temp[0]);
 
       this.setState({ bagItems: bagItems, totalPrice: tempPrice });
@@ -92,15 +104,23 @@ class App extends Component {
     this.setState({ user: null, page: REDIRECT_PAGE });
   };
 
-  handlePageChange = (newPage) => {
+  handlePageChange = (newPage, product) => {
     localStorage.setItem(PAGE_KEY, JSON.stringify(newPage));
-    this.setState({ page: newPage });
+    this.setState({ page: newPage, viewProduct: product });
   };
 
   getPage = () => {
-    const { products, user, bagItems, totalPrice } = this.state;
+    const {
+      products,
+      user,
+      bagItems,
+      totalPrice,
+      viewProduct,
+      addViewProduct,
+    } = this.state;
 
     const defaultProps = {
+      addViewProduct: addViewProduct,
       onInputChange: this.handleInputChange,
       addBagItem: this.addBagItem,
       onPageChange: this.handlePageChange,
@@ -108,6 +128,8 @@ class App extends Component {
       onProduct: this.handleProduct,
       bagItems: bagItems,
       totalPrice: totalPrice,
+      viewProduct: viewProduct,
+      removeBagItem: this.removeBagItem,
     };
     console.log(this.state.bagItems);
     switch (this.state.page) {

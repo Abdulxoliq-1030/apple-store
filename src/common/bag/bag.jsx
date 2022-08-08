@@ -5,26 +5,16 @@ import "./bag.scss";
 import React, { Component } from "react";
 
 class Bag extends Component {
-  // componentDidMount = () => {
-  //   this.setState({ totalPrice: this.props.bagItems.length });
-  // };
-
-  // handleProduct = (selectedIdx) => {
-  //   if (selectedIdx) {
-  //     alert("Aniq o'chirmoqchimisiz");
-  //     // console.log(selectedIdx);
-  //   }
-  // };
   render() {
     const {
       bagItems,
       onPageChange,
       pageName,
-      onProduct,
       btnLabel,
       totalPrice,
+      removeBagItem,
     } = this.props;
-
+console.log(totalPrice);
     return (
       <div className="bag">
         <h1>Bag</h1>
@@ -32,7 +22,7 @@ class Bag extends Component {
           {bagItems
             ? bagItems.map((product) => (
                 <img
-                  onClick={() => onProduct(product.id)}
+                  onClick={() => removeBagItem(product)}
                   key={product.id}
                   src={product.imgURL}
                   alt=""

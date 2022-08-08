@@ -4,7 +4,14 @@ import OrderSummary from "../order-summary/order-summary";
 import ShippingAddress from "../shipping-address/shipping-address";
 import "./check-user.scss";
 
-const CheckUser = ({ onPageChange, onLogOut, userData, onInputLabel }) => {
+const CheckUser = ({
+  bagItems,
+  onPageChange,
+  onLogOut,
+  userData,
+  onInputLabel,
+  totalPrice,
+}) => {
   return (
     <div className="check-user">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
@@ -15,9 +22,13 @@ const CheckUser = ({ onPageChange, onLogOut, userData, onInputLabel }) => {
           userData={userData}
           onInputLabel={onInputLabel}
         />
-        <BagItem />
+        {bagItems!==[]?
+          bagItems.map((bagItem) => (
+          <BagItem bagItem={bagItem} />
+        )):<h1>Bag is Empty</h1>
+        }
       </div>
-      <OrderSummary onPageChange={onPageChange} />
+      <OrderSummary totalPrice={totalPrice} onPageChange={onPageChange} />
     </div>
   );
 };

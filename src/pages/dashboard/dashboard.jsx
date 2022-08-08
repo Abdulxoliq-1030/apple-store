@@ -12,19 +12,24 @@ function Dashboard({
   onProduct,
   bagItems,
   totalPrice,
+  addViewProduct,
+  removeBagItem,
 }) {
   return (
     <div className="dashboard">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
       <ProductCard
+        addViewProduct={addViewProduct}
+        onPageChange={onPageChange}
         onInputChange={onInputChange}
         addBagItem={addBagItem}
         products={products}
       />
       <Bag
+        removeBagItem={removeBagItem}
         totalPrice={totalPrice}
         onPageChange={onPageChange}
-        pageName={"view"}
+        pageName={"checkout"}
         onProduct={onProduct}
         btnLabel={"View Bag"}
         bagItems={bagItems}
