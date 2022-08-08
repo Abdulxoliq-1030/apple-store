@@ -56,8 +56,7 @@ class App extends Component {
     }
     if (isOk) {
       tempPrice += +product.price;
-      bagItems.push(temp[0]);
-
+      bagItems.push(temp[0])
       this.setState({ bagItems: bagItems, totalPrice: tempPrice });
     }
   };
