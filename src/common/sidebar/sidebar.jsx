@@ -1,5 +1,4 @@
 import { HandleBag, LogOut, StoreFont } from "../../assets/icons";
-
 import "./sidebar.scss";
 
 function Sidebar({ onPageChange, onLogOut }) {

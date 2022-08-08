@@ -133,11 +133,6 @@ class App extends Component {
         return (
           <Login
             onLogin={this.handleLogin}
-            userName={this.userName}
-            userStreetName={this.userStreetName}
-            userCity={this.userCity}
-            userState={this.userState}
-            userCountry={this.userCountry}
             inputLabel={this.state.inputLabel}
           />
         );
@@ -159,11 +154,6 @@ class App extends Component {
         return (
           <Login
             onLogin={this.handleLogin}
-            userName={this.userName}
-            userStreetName={this.userStreetName}
-            userCity={this.userCity}
-            userState={this.userState}
-            userCountry={this.userCountry}
             inputLabel={this.state.inputLabel}
           />
         );

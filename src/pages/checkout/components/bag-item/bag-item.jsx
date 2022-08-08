@@ -7,7 +7,7 @@ export class bagItem extends Component {
     mount: 1,
     itemTotalPrice: this.props.bagItem.price,
   };
-  counter = (oper) => {
+  handleCount = (oper) => {
     let temp = this.state.mount;
     let temp1 = +this.state.itemTotalPrice;
 
@@ -45,11 +45,11 @@ export class bagItem extends Component {
               $ {itemTotalPrice} x {mount}
             </span>
             <div className="amount">
-              <span onClick={() => this.counter("-")} className="minus">
+              <span onClick={() => this.handleCount("-")} className="minus">
                 -
               </span>
               <span className="count">{mount}</span>
-              <div onClick={() => this.counter("+")} className="plus">
+              <div onClick={() => this.handleCount("+")} className="plus">
                 +
               </div>
             </div>
