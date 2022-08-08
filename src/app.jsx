@@ -23,26 +23,42 @@ class App extends Component {
     const page = JSON.parse(localStorage.getItem(PAGE_KEY)); // get page
     this.state = {
       page: user ? page : REDIRECT_PAGE,
+
       user,
       inputLabel: "Login",
       products: products,
       productName: "",
       bagItems: [],
-      amount: 1,
+      totalPrice: 0,
+      //yanfi state qushildi
+      viewProduct: products[0],
     };
   }
-  handleDecrement = (amount) => {
-    if (amount > 0) this.setState({ amount: amount - 1 });
+  addViewProduct = (product) => {
+    this.setState({ viewProduct: product });
   };
-  handleIncrement = (amount) => {
-    this.setState({ amount: amount + 1 });
+
+  removeBagItem = (product) => {
+    let tempPrice = this.state.totalPrice;
+    tempPrice = +tempPrice - +product.price;
+    let bagItems = this.state.bagItems.filter((item) => item !== product);
+    this.setState({ bagItems: bagItems, totalPrice: tempPrice });
   };
   addBagItem = (product) => {
+    let isOk = true;
     let bagItems = this.state.bagItems;
+    let tempPrice = this.state.totalPrice;
     let temp = this.state.products.filter((item) => item === product);
-    bagItems.push(temp[0]);
-
-    this.setState({ bagItems: bagItems });
+    for (let i = 0; i < bagItems.length; i++) {
+      if (bagItems[i] === temp[0]) {
+        return (isOk = false);
+      }
+    }
+    if (isOk) {
+      tempPrice += +product.price;
+      bagItems.push(temp[0]);
+      this.setState({ bagItems: bagItems, totalPrice: tempPrice });
+    }
   };
 
   handleInputChange = async (event) => {
@@ -87,22 +103,32 @@ class App extends Component {
     this.setState({ user: null, page: REDIRECT_PAGE });
   };
 
-  handlePageChange = (newPage) => {
+  handlePageChange = (newPage, product) => {
     localStorage.setItem(PAGE_KEY, JSON.stringify(newPage));
-    this.setState({ page: newPage });
+    this.setState({ page: newPage, viewProduct: product });
   };
 
   getPage = () => {
-    const { products, user } = this.state;
+    const {
+      products,
+      user,
+      bagItems,
+      totalPrice,
+      viewProduct,
+      addViewProduct,
+    } = this.state;
+
     const defaultProps = {
+      addViewProduct: addViewProduct,
       onInputChange: this.handleInputChange,
       addBagItem: this.addBagItem,
       onPageChange: this.handlePageChange,
       onLogOut: this.handleLogOut,
       onProduct: this.handleProduct,
-      bagItems: this.state.bagItems,
-      onDec: this.handleDecrement,
-      onInc: this.handleIncrement,
+      bagItems: bagItems,
+      totalPrice: totalPrice,
+      viewProduct: viewProduct,
+      removeBagItem: this.removeBagItem,
     };
     console.log(this.state.bagItems);
     switch (this.state.page) {

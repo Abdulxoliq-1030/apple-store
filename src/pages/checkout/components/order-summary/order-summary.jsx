@@ -1,7 +1,8 @@
 import { Back } from "../../../../assets/icons/index";
 import "./order-summary.scss";
 
-export default function OrderSummary({ onPageChange }) {
+export default function OrderSummary({ onPageChange, totalPrice }) {
+  let usluga = totalPrice / 100;
   return (
     <div className="order-wrap">
       <div className="order-summary">
@@ -9,16 +10,16 @@ export default function OrderSummary({ onPageChange }) {
         <div className="prices">
           <div className="order-price">
             <span>Items:</span>
-            <span>$ 5,849.22 </span>
+            <span>$ {totalPrice}.00 </span>
           </div>
           <div className="order-price">
             <span>Shipping:</span>
-            <span>$ 6.99 </span>
+            <span>$ {usluga}.00 </span>
           </div>
         </div>
         <div className="order-total">
           <span>Order Total:</span>
-          <span>$ 5,856.21</span>
+          <span>$ {totalPrice+usluga}.00</span>
         </div>
         <button>Place your order</button>
       </div>

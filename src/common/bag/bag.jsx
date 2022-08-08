@@ -5,23 +5,16 @@ import "./bag.scss";
 import React, { Component } from "react";
 
 class Bag extends Component {
-  state = {
-    totalPrice: 0,
-  };
-  componentDidMount = () => {
-    // this.setState({ totalPrice: this.props.bagItems.length });
-  };
-
-  handleProduct = (selectedIdx) => {
-    if (selectedIdx) {
-      alert("Aniq o'chirmoqchimisiz");
-      // console.log(selectedIdx);
-    }
-  };
   render() {
-    const { bagItems, onPageChange, pageName, onProduct, btnLabel } =
-      this.props;
-
+    const {
+      bagItems,
+      onPageChange,
+      pageName,
+      btnLabel,
+      totalPrice,
+      removeBagItem,
+    } = this.props;
+console.log(totalPrice);
     return (
       <div className="bag">
         <h1>Bag</h1>
@@ -29,9 +22,7 @@ class Bag extends Component {
           {bagItems
             ? bagItems.map((product) => (
                 <img
-                  // onClick={() => handleProduct(idx)}
-
-                  onClick={() => onProduct(product.id)}
+                  onClick={() => removeBagItem(product)}
                   key={product.id}
                   src={product.imgURL}
                   alt=""
@@ -40,7 +31,7 @@ class Bag extends Component {
             : null}
         </div>
 
-        <h4>Bag Total: {this.state.totalPrice} </h4>
+        <h4>Bag Total: $ {totalPrice}.00 </h4>
         <Button
           pageName={pageName}
           onPageChange={onPageChange}

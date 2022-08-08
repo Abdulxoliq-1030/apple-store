@@ -2,43 +2,51 @@ import "./view.scss";
 import apple from "../../assets/images/apple-watch.png";
 import { BagAdd } from "../../assets/icons";
 import { Back } from "../../assets/icons";
-import Button from "../../common/button/button";
 import Sidebar from "../../common/sidebar/sidebar";
 import Bag from "../../common/bag/bag";
 import StarRate from "../../common/star-rate/star-rate";
 
-const View = ({ bagItems, onPageChange, onLogOut }) => {
-  console.log(bagItems);
+const View = ({
+  addBagItem,
+  bagItems,
+  onPageChange,
+  onLogOut,
+  viewProduct,
+  totalPrice,
+  removeBagItem,
+}) => {
   return (
     <div className="genview">
       <Sidebar onPageChange={onPageChange} onLogOut={onLogOut} />
       <div className="view">
-        <span className="back">{Back} Back</span>
+        <div onClick={() => onPageChange("dashboard")} className="back">
+          {Back} Back
+        </div>
         <div className="item">
           <div className="img-box">
             <div className="img-container">
               <div className="image">
-                <img src={apple} alt={apple} />
+                <img src={viewProduct.imgURL} alt={apple} />
               </div>
               <div className="image">
-                <img src={apple} alt={apple} />
+                <img src={viewProduct.imgURL} alt={apple} />
               </div>
               <div className="image">
-                <img src={apple} alt={apple} />
+                <img src={viewProduct.imgURL} alt={apple} />
               </div>
             </div>
-            <img src={apple} alt={apple} />
+            <img src={viewProduct.imgURL} alt={apple} />
           </div>
           <div className="info">
-            <h2 className="name">Apple Watch</h2>
-            <span className="series">Series 5 SE</span>
+            <h2 className="name">{viewProduct.name}</h2>
+            <span className="series">{viewProduct.model}</span>
             <div className="rate">
               <div className="starts">
-                <StarRate />
+                <StarRate rate={viewProduct.rate} />
               </div>
-              <span>5/5</span>
+              <span>{viewProduct.rate}</span>
             </div>
-            <span className="price">$ 529.99</span>
+            <span className="price">$ {viewProduct.price}</span>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
               pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet
@@ -49,43 +57,26 @@ const View = ({ bagItems, onPageChange, onLogOut }) => {
         </div>
 
         <div className="btn">
-          <Button btnIcon={BagAdd} btnLabel="Add to Bag" />
+          {/* <Button btnIcon={BagAdd} btnLabel="Add to Bag" /> */}
+          <button onClick={() => addBagItem(viewProduct)}>
+            {BagAdd} Add to Bag
+          </button>
         </div>
 
         <span className="line"></span>
 
         <div className="description">
           <span className="title">Description</span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim
-            odio faucibus nec malesuada purus volutpat vel sed viverra. Id
-            sagittis, phasellus dui in arcu. Nec arcu, sit nunc, nibh purus
-            pellentesque sagittis. Felis rhoncus facilisis massa eget purus in
-            purus. Etiam at cras nulla nunc. Malesuada in pretium diam
-            scelerisque sit mattis in egestas neque. Eu porta tempor sodales
-            nisl integer turpis porttitor sed sed. Ut senectus odio dictum enim
-            velit tempor diam quisque suspendisse. Orci vel ridiculus diam
-            viverra. Libero malesuada orci, quis placerat suscipit augue
-            imperdiet. Et praesent augue dictum mauris eget lacus malesuada.
-            Aenean nisi, sodales natoque massa magna dignissim mi. Mattis
-            tellus, justo, lorem sed tempor diam sit viverra enim. Id id
-            placerat eu etiam nulla laoreet. Dignissim leo fames turpis quis
-            suspendisse vulputate laoreet vulputate ac. Aliquam justo lectus eu
-            dui porttitor. Cras a aliquam phasellus sollicitudin ornare.
-            Tristique volutpat facilisis in ut proin. Est vitae facilisi
-            sollicitudin id lorem mattis nibh ipsum, nec. Consectetur
-            consectetur morbi morbi aliquet mi risus, velit, sit at. Integer
-            morbi viverra hendrerit risus. Odio phasellus nibh senectus nec id
-            enim quam sed. At potenti sollicitudin sollicitudin lobortis morbi.
-            Nunc molestie et adipiscing aliquam. Sit vel mi dolor suscipit. In
-            eget ut ac at facilisi leo viverra. Arcu ac ut fermentum, viverra
-            et, vitae etiam cras. Eu purus non ut turpis fusce. Mi vitae nibh mi
-            ut feugiat varius risus eros.
-          </p>
+          <p>{viewProduct.description}</p>
         </div>
       </div>
 
-      <Bag bagItems={bagItems} btnLabel={"View Bag"} />
+      <Bag
+        removeBagItem={removeBagItem}
+        totalPrice={totalPrice}
+        bagItems={bagItems}
+        btnLabel={"View Bag"}
+      />
     </div>
   );
 };

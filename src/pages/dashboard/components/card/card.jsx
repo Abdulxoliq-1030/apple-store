@@ -4,7 +4,6 @@ import "./card.scss";
 
 class ProductCard extends Component {
   render() {
-    console.log(this.props.products);
     return (
       <div className="general">
         {/* <Search /> */}
@@ -23,7 +22,12 @@ class ProductCard extends Component {
                 product.computer && "big-container"
               }`}
             >
-              <div className="img-container">
+              <div
+                onClick={() =>  
+                this.props.onPageChange("view", product)
+                }
+                className="img-container"
+              >
                 <img src={product.imgURL} alt="" />
               </div>
               <div className="title-container">
