@@ -18,8 +18,8 @@ class App extends Component {
     this.state = {
       page: user ? page : REDIRECT_PAGE,
       user,
-      inputLabel: "Login",
       products: products,
+      inputLabel: "Login",
       productName: "",
       bagItems: [],
       totalPrice: 0,
@@ -72,6 +72,7 @@ class App extends Component {
     userState,
     userCountry
   ) => {
+    
     const data = {
       userName: userName.current.value,
       userStreetName: userStreetName.current.value,
