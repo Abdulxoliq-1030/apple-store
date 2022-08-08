@@ -12,9 +12,9 @@ class Bag extends Component {
       pageName,
       btnLabel,
       totalPrice,
-      removeBagItem,
+      removeBagItem, //003,
     } = this.props;
-console.log(totalPrice);
+    console.log(totalPrice);
     return (
       <div className="bag">
         <h1>Bag</h1>
@@ -22,7 +22,7 @@ console.log(totalPrice);
           {bagItems
             ? bagItems.map((product) => (
                 <img
-                  onClick={() => removeBagItem(product)}
+                  onClick={()=>removeBagItem(product)}
                   key={product.id}
                   src={product.imgURL}
                   alt=""

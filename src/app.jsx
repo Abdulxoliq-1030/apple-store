@@ -23,7 +23,6 @@ class App extends Component {
     const page = JSON.parse(localStorage.getItem(PAGE_KEY)); // get page
     this.state = {
       page: user ? page : REDIRECT_PAGE,
-
       user,
       inputLabel: "Login",
       products: products,
@@ -34,6 +33,7 @@ class App extends Component {
       viewProduct: products[0],
     };
   }
+
   addViewProduct = (product) => {
     this.setState({ viewProduct: product });
   };
@@ -44,21 +44,18 @@ class App extends Component {
     let bagItems = this.state.bagItems.filter((item) => item !== product);
     this.setState({ bagItems: bagItems, totalPrice: tempPrice });
   };
-  addBagItem = (product) => {
-    let isOk = true;
-    let bagItems = this.state.bagItems;
-    let tempPrice = this.state.totalPrice;
-    let temp = this.state.products.filter((item) => item === product);
-    for (let i = 0; i < bagItems.length; i++) {
-      if (bagItems[i] === temp[0]) {
-        return (isOk = false);
-      }
-    }
-    if (isOk) {
-      tempPrice += +product.price;
-      bagItems.push(temp[0]);
 
-      this.setState({ bagItems: bagItems, totalPrice: tempPrice });
+  addBagItem = (product) => {
+    const { bagItems, totalPrice, products } = this.state;
+    let isOk = bagItems.some((item) => item === product);
+    let tempPrice = totalPrice;
+    let temp = products.filter((item) => item === product)[0];
+    if (!isOk) {
+      bagItems.push(temp);
+      this.setState({
+        bagItems: bagItems,
+        totalPrice: (tempPrice += +product.price),
+      });
     }
   };
 
@@ -67,18 +64,12 @@ class App extends Component {
     this.filterProducts();
   };
   filterProducts = () => {
-    let temp =
-      this.state.productName !== ""
-        ? products.filter(
-            (product) =>
-              product.name
-                .toLowerCase()
-                .includes(this.state.productName.toLowerCase()) ||
-              product.model
-                .toLowerCase()
-                .includes(this.state.productName.toLowerCase())
-          )
-        : products;
+    const { productName } = this.state;
+    let temp = products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(productName.toLowerCase()) ||
+        product.model.toLowerCase().includes(productName.toLowerCase())
+    );
     this.setState({ products: temp });
   };
 
@@ -129,7 +120,7 @@ class App extends Component {
       bagItems: bagItems,
       totalPrice: totalPrice,
       viewProduct: viewProduct,
-      removeBagItem: this.removeBagItem,
+      removeBagItem: this.removeBagItem, //003,
     };
     console.log(this.state.bagItems);
     switch (this.state.page) {

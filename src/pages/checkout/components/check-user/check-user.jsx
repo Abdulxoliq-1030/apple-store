@@ -22,11 +22,11 @@ const CheckUser = ({
           userData={userData}
           onInputLabel={onInputLabel}
         />
-        {bagItems!==[]?
-          bagItems.map((bagItem) => (
-          <BagItem bagItem={bagItem} />
-        )):<h1>Bag is Empty</h1>
-        }
+        {bagItems !== [] ? (
+          bagItems.map((bagItem) => <BagItem bagItem={bagItem} />)
+        ) : (
+          <h1>Bag is Empty</h1>
+        )}
       </div>
       <OrderSummary totalPrice={totalPrice} onPageChange={onPageChange} />
     </div>
