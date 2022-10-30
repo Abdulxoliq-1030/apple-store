@@ -1,5 +1,5 @@
 .bag {
-  width: 10rem;
+  width: 8.5rem;
   text-align: center;
   padding: 0 7rem;
   display: flex;
@@ -11,8 +11,12 @@
   .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 1rem;
     overflow: scroll;
+    height: 70vh;
   }
 
   img {
@@ -31,8 +35,7 @@
 
   button {
     margin-top: 3rem;
-    width: 100%;
     padding: 0.8rem;
-    font-size: 22px;
+    font-size: 15px;
   }
 }
